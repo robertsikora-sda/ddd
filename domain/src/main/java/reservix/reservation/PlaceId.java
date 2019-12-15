@@ -1,3 +1,5 @@
+package reservix.reservation;
+
 public class PlaceId {
 
     private final String id;

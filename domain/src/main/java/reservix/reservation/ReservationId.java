@@ -1,3 +1,5 @@
+package reservix.reservation;
+
 public class ReservationId {
 
     private final String id;
