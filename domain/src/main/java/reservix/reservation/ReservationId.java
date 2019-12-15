@@ -1,14 +1,16 @@
 package reservix.reservation;
 
+import java.util.UUID;
+
 public class ReservationId {
 
-    private final String id;
+    private final UUID id;
 
-    public ReservationId(String id) {
+    public ReservationId(UUID id) {
         this.id = id;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 }

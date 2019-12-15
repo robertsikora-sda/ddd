@@ -20,5 +20,28 @@ class ReservationEvents {
         }
     }
 
+    static class ReservationCreated implements Event {
+        private final ReservationId reservationId;
+
+        ReservationCreated(ReservationId reservationId) {
+            this.reservationId = reservationId;
+        }
+    }
+
+    static class ReservationAccepted implements Event {
+        private final ReservationId reservationId;
+
+        ReservationAccepted(ReservationId reservationId) {
+            this.reservationId = reservationId;
+        }
+    }
+
+    static class ReservationRejected implements Event {
+        private final ReservationId reservationId;
+
+        ReservationRejected(ReservationId reservationId) {
+            this.reservationId = reservationId;
+        }
+    }
 
 }

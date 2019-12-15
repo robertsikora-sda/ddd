@@ -3,6 +3,10 @@ package reservix.reservation;
 import io.vavr.collection.List;
 import reservix.AggregateRoot;
 
+import java.util.UUID;
+import static reservix.reservation.ReservationEvents.*;
+
+
 public class Reservation extends AggregateRoot {
 
     private ReservationId reservationId;
@@ -20,12 +24,17 @@ public class Reservation extends AggregateRoot {
         }
     }
 
-    private Reservation(final Status status) {
-        this.status = status;
+    private Reservation() {
+        this.reservationId = new ReservationId(UUID.randomUUID());
+        this.status = Status.NEW;
     }
 
     public static Reservation createNewReservation() {
-        return new Reservation(Status.NEW);
+        final Reservation reservation = new Reservation();
+
+        reservation.emitEvent(new ReservationCreated(reservation.reservationId));
+
+        return reservation;
     }
 
     public Reservation pickupPlace(final PlaceId placeId) {
@@ -35,7 +44,7 @@ public class Reservation extends AggregateRoot {
         status = Status.OPEN;
         places.append(placeId);
 
-        emitEvent(new ReservationEvents.PlacePickedEvent(placeId));
+        emitEvent(new PlacePickedEvent(placeId));
 
         return this;
     }
@@ -47,7 +56,7 @@ public class Reservation extends AggregateRoot {
         status = Status.OPEN;
         places.remove(placeId);
 
-        emitEvent(new ReservationEvents.PlaceUnpickedEvent(placeId));
+        emitEvent(new PlaceUnpickedEvent(placeId));
 
         return this;
     }
@@ -59,6 +68,8 @@ public class Reservation extends AggregateRoot {
 
         status = Status.ACCEPTED;
 
+        emitEvent(new ReservationAccepted(reservationId));
+
         return this;
     }
 
@@ -68,6 +79,8 @@ public class Reservation extends AggregateRoot {
         }
 
         status = Status.REJECTED;
+
+        emitEvent(new ReservationRejected(reservationId));
 
         return this;
     }
