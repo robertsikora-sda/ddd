@@ -1,22 +1,30 @@
 package reservix.reservation;
 
+import lombok.AllArgsConstructor;
+import reservix.MeetupId;
+import reservix.PlaceId;
+import reservix.meetups.FreePlaceFinder;
+
+@AllArgsConstructor
 public class ReservationService {
 
     private final ReservationRepo reservationRepo;
+    private final FreePlaceFinder freePlaceFinder;
 
-    public ReservationService(ReservationRepo reservationRepo) {
+    public ReservationService(ReservationRepo reservationRepo, FreePlaceFinder freePlaceFinder) {
         this.reservationRepo = reservationRepo;
+        this.freePlaceFinder = freePlaceFinder;
     }
 
-    public Reservation createNewResevation() {
-        final Reservation reservation = Reservation.createNewReservation();
+    public Reservation createNewResevation(final MeetupId meetupId) {
+        final Reservation reservation = Reservation.createNewReservation(meetupId);
         reservationRepo.save(reservation);
         return reservation;
     }
 
     public void pickupPlace(final ReservationId reservationId, final PlaceId placeId) {
         final Reservation reservation = reservationRepo.get(reservationId);
-        reservation.pickupPlace(placeId);
+        reservation.pickupPlace(placeId, freePlaceFinder);
         reservationRepo.save(reservation);
     }
 

@@ -10,4 +10,6 @@ public abstract class AggregateRoot {
         this.events.append(event);
         return event;
     }
+
+
 }
