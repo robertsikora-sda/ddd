@@ -1,12 +1,11 @@
 package reservix.meetups;
 
+import lombok.Value;
 import reservix.PlaceId;
 
+@Value
 public class FreePlaceDto {
 
-    private PlaceId placeId;
+    private final PlaceId placeId;
 
-    public FreePlaceDto(PlaceId placeId) {
-        this.placeId = placeId;
-    }
 }

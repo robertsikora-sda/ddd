@@ -17,6 +17,22 @@ class Meetup extends AggregateRoot {
         this.places = places;
     }
 
+    public Name getName() {
+        return name;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public AvailablePlaces getAvailablePlaces() {
+        return availablePlaces;
+    }
+
+    public Places getPlaces() {
+        return places;
+    }
+
     static Meetup createNewMeetup(final Name name,
                                   final Time time,
                                   final AvailablePlaces availablePlaces) {

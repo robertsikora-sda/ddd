@@ -83,7 +83,7 @@ class Reservation extends AggregateRoot {
 
         status = Status.ACCEPTED;
 
-        emitEvent(new ReservationAcceptedEvent(reservationId));
+        emitEvent(new ReservationAcceptedEvent(reservationId, places, meetupId));
 
         return this;
     }

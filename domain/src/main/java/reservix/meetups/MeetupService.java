@@ -1,14 +1,13 @@
 package reservix.meetups;
 
+import lombok.AllArgsConstructor;
+
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
 public class MeetupService {
 
     private final MeetupRepo meetupRepo;
-
-    public MeetupService(MeetupRepo meetupRepo) {
-        this.meetupRepo = meetupRepo;
-    }
 
     public Meetup createNewMeetup(final String name, final LocalDateTime time, final int availablePlaces) {
         final Meetup meetup = Meetup.createNewMeetup(

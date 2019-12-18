@@ -1,10 +1,12 @@
 package reservix.meetups;
 
+import lombok.AllArgsConstructor;
 import reservix.reservation.ReservationEvents;
 
+@AllArgsConstructor
 class PlacesPicker {
 
-    private MeetupRepo meetupRepo;
+    private final MeetupRepo meetupRepo;
 
     public void reservePlace(final ReservationEvents.PlacePickedEvent event) {
         final Meetup meetup = meetupRepo.get(event.getMeetupId());

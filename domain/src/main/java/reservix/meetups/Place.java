@@ -1,9 +1,7 @@
 package reservix.meetups;
 
-import lombok.Value;
 import reservix.PlaceId;
 
-@Value
 class Place {
 
     private PlaceId placeId;

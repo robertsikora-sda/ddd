@@ -11,11 +11,6 @@ public class ReservationService {
     private final ReservationRepo reservationRepo;
     private final FreePlaceFinder freePlaceFinder;
 
-    public ReservationService(ReservationRepo reservationRepo, FreePlaceFinder freePlaceFinder) {
-        this.reservationRepo = reservationRepo;
-        this.freePlaceFinder = freePlaceFinder;
-    }
-
     public Reservation createNewResevation(final MeetupId meetupId) {
         final Reservation reservation = Reservation.createNewReservation(meetupId);
         reservationRepo.save(reservation);

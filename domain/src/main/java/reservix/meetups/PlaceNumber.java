@@ -1,10 +1,10 @@
 package reservix.meetups;
 
+import lombok.Value;
+
+@Value
 class PlaceNumber {
 
-    private String number;
+    private final String number;
 
-    public PlaceNumber(String number) {
-        this.number = number;
-    }
 }
