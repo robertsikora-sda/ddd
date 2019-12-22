@@ -3,7 +3,7 @@ package reservix.reservation;
 import lombok.AllArgsConstructor;
 import reservix.MeetupId;
 import reservix.PlaceId;
-import reservix.meetups.FreePlaceFinder;
+import reservix.meetup.FreePlaceFinder;
 
 @AllArgsConstructor
 public class ReservationService {

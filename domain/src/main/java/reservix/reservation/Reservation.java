@@ -5,18 +5,19 @@ import io.vavr.control.Either;
 import reservix.AggregateRoot;
 import reservix.MeetupId;
 import reservix.PlaceId;
-import reservix.meetups.FreePlaceDto;
-import reservix.meetups.FreePlaceFinder;
+import reservix.meetup.FreePlaceDto;
+import reservix.meetup.FreePlaceFinder;
 
 import java.util.UUID;
+
 import static reservix.reservation.ReservationEvents.*;
 
 class Reservation extends AggregateRoot {
 
-    private MeetupId meetupId;
-    private ReservationId reservationId;
+    private final MeetupId meetupId;
+    private final ReservationId reservationId;
     private Status status;
-    private List<PlaceId> places = List.empty();
+    private final List<PlaceId> places = List.empty();
 
     enum Status {
         NEW,
