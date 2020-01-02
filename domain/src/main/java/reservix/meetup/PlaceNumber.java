@@ -3,7 +3,7 @@ package reservix.meetup;
 import lombok.Value;
 
 @Value
-class PlaceNumber {
+public class PlaceNumber {
 
     private final String number;
 

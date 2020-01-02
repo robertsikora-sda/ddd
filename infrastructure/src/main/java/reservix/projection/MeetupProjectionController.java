@@ -1,15 +1,27 @@
 package reservix.projection;
 
-import io.vavr.collection.Seq;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.PathVariable;
 import lombok.AllArgsConstructor;
 
+import java.util.List;
+
+@Controller("/v1/queries")
 @AllArgsConstructor
-public class MeetupProjectionController {
+class MeetupProjectionController {
 
-    private final MeetupsProjectionRepo meetupsProjectionRepo;
+    private final MeetupsProjectionInMemoryRepo meetupsProjectionInMemoryRepo;
+    private final MeetupsPlacesProjectionInMemoryRepo meetupsPlacesProjectionInMemoryRepo;
 
-    public Seq<MeetupsProjectionDto> getAllMeetups() {
-        return meetupsProjectionRepo.findAll();
+    @Get("/meetups")
+    List<MeetupsProjectionDto> getAllMeetups() {
+        return meetupsProjectionInMemoryRepo.findAll();
+    }
+
+    @Get("/meetups/{meetupId}/places")
+    List<MeetupPlacesProjectionDto> getMeetupPlaces(@PathVariable final String meetupId) {
+        return meetupsPlacesProjectionInMemoryRepo.findAllPlaces(meetupId);
     }
 
 }

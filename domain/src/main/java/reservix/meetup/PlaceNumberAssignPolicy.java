@@ -1,6 +1,6 @@
 package reservix.meetup;
 
-interface PlaceNumberAssignPolicy {
+public interface PlaceNumberAssignPolicy {
 
     PlaceNumber next();
 

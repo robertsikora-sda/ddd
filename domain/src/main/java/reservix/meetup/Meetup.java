@@ -1,12 +1,15 @@
 package reservix.meetup;
 
 import lombok.Getter;
+import lombok.Value;
 import reservix.AggregateRoot;
 import reservix.MeetupId;
 import reservix.PlaceId;
+import reservix.meetup.events.*;
 import reservix.user.UserId;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -14,46 +17,61 @@ public class Meetup extends AggregateRoot {
 
     private MeetupId id;
     private UserId ownerId;
-    private MeetupName meetupName;
+    private MeetupName name;
     private MeetupTime time;
-    private Places places;
+    private int availablePlaces;
+    private PlaceNumberAssignPolicy placeNumberAssignPolicy = new NumericPlaceNumberPolicy();
+    private final Reservations reservations = new Reservations();
 
-    private Meetup(MeetupId id, UserId ownerId, MeetupName meetupName, MeetupTime time, Places places) {
-        this.id = id;
+    public Meetup(UserId ownerId, String name, LocalDateTime time, int availablePlaces) {
+        this.id = new MeetupId(UUID.randomUUID());
         this.ownerId = ownerId;
-        this.meetupName = meetupName;
-        this.time = time;
-        this.places = places;
+        this.name = new MeetupName(name);
+        this.time = new MeetupTime(time);
+        this.availablePlaces = availablePlaces;
+
+        this.emitEvent(new MeetupCreatedEvent(new MeetupProjection(this)));
     }
 
-    static Meetup createNewMeetup(final MeetupName meetupName,
-                                  final MeetupTime time,
-                                  final int availablePlaces,
-                                  final UserId ownerId) {
-        return new Meetup(new MeetupId(UUID.randomUUID()), ownerId, meetupName, time, new Places(availablePlaces, new NumericPlaceNumberPolicy()));
+    public void selectNewPlaces(final UserId userId, final PlaceId placeId) {
+        reservations.getUserReservation(userId).selectPlace(placeId);
+
+        emitEvent(new MeetupPlaceSelectedEvent(placeId));
     }
 
-    Meetup reserveNewPlace(final PlaceId placeId) {
-        places.findBy(placeId).reserve();
-        return this;
+    public void unselectPlaces(final UserId userId, final PlaceId placeId) {
+        reservations.getUserReservation(userId).unselectPlace(placeId);
+
+        emitEvent(new MeetupPlaceUnselectedEvent(placeId));
     }
 
-    Meetup makePlaceFree(final PlaceId placeId) {
-        places.findBy(placeId).makeFree();
-        return this;
+    public Reservation acceptReservation(final UserId userId) {
+        final Reservation reservation = reservations.getUserReservation(userId).accept();
+
+        emitEvent(new ReservationAcceptedEvent(new MeetupProjection(this), List.copyOf(reservation.getPlaces())));
+
+        reservation.getPlaces().forEach(t -> emitEvent(new MeetupPlaceReservedEvent(t)));
+
+        return reservation;
     }
 
-    Places getFreePlaces() {
-        return places.allFree();
+    public Reservation rejectReservation(final UserId userId) {
+        final Reservation reservation = reservations.getUserReservation(userId).reject();
+
+        emitEvent(new ReservationRejectedEvent());
+
+        reservation.getPlaces().forEach(t -> emitEvent(new MeetupPlaceUnselectedEvent(t)));
+
+        return reservation;
     }
 
     public boolean areFreePlaces() {
-        return getFreePlaces().getPlaces().size() > 0;
+        return false;
     }
 
-    public static class MeetupName {
+    @Value
+    static class MeetupName {
 
-        @Getter
         private String name;
 
         MeetupName(final String name) {
@@ -64,9 +82,9 @@ public class Meetup extends AggregateRoot {
         }
     }
 
-    public static class MeetupTime {
+    @Value
+    static class MeetupTime {
 
-        @Getter
         private LocalDateTime time;
 
         MeetupTime(final LocalDateTime time) {

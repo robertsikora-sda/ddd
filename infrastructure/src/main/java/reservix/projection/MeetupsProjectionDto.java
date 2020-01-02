@@ -5,7 +5,7 @@ import lombok.Value;
 import java.time.LocalDateTime;
 
 @Value
-public class MeetupsProjectionDto {
+class MeetupsProjectionDto {
 
     private final String meetupId;
     private final String ownerId;

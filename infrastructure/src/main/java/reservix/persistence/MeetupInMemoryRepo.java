@@ -1,18 +1,22 @@
 package reservix.persistence;
 
+import lombok.AllArgsConstructor;
 import reservix.MeetupId;
 import reservix.events.EventEmitter;
-import reservix.events.SimpleMeetupEventsEmitter;
 import reservix.meetup.Meetup;
 import reservix.meetup.MeetupRepo;
 
+import javax.inject.Singleton;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MeetupInMemoryRepo implements MeetupRepo {
+@Singleton
+@AllArgsConstructor
+class MeetupInMemoryRepo implements MeetupRepo {
 
     private static final Map<MeetupId, Meetup> INSTANCES = new ConcurrentHashMap<>();
-    private EventEmitter emitter = new SimpleMeetupEventsEmitter();
+
+    private final EventEmitter eventEmitter;
 
     @Override
     public Meetup get(final MeetupId id) {
@@ -21,10 +25,10 @@ public class MeetupInMemoryRepo implements MeetupRepo {
 
     @Override
     public Meetup save(final Meetup meetup) {
-        final Meetup addedMeetup = INSTANCES.putIfAbsent(meetup.getId(), meetup);
+        INSTANCES.putIfAbsent(meetup.getId(), meetup);
 
-        emitter.emit(meetup.getEvents());
+        eventEmitter.emit(meetup.getEvents());
 
-        return addedMeetup;
+        return meetup;
     }
 }

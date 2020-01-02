@@ -1,27 +1,29 @@
 package reservix.projection;
 
 import lombok.AllArgsConstructor;
-import reservix.meetup.Meetup;
+import reservix.meetup.MeetupProjection;
+import reservix.meetup.events.MeetupCreatedEvent;
 
-import static reservix.meetup.MeetupEvents.MeetupCreatedEvent;
+import javax.inject.Singleton;
 
+@Singleton
 @AllArgsConstructor
 public class MeetupsProjectionEventListener {
 
-    private final MeetupsProjectionRepo projectionRepo;
+    private final MeetupsProjectionInMemoryRepo projectionRepo;
 
     public MeetupCreatedEvent updateMeetupsProjection(final MeetupCreatedEvent event) {
 
-        final Meetup createdMeetup = event.getCreatedMeetup();
+        final MeetupProjection createdMeetup = event.getCreatedMeetup();
 
         projectionRepo.save(
 
                 new MeetupsProjectionDto(
                         createdMeetup.getId().getId().toString(),
                         createdMeetup.getOwnerId().getId().toString(),
-                        createdMeetup.getMeetupName().getName(),
-                        createdMeetup.getTime().getTime(),
-                        createdMeetup.areFreePlaces()
+                        createdMeetup.getName(),
+                        createdMeetup.getTime(),
+                        createdMeetup.isFreePlaces()
                 )
         );
 

@@ -1,12 +1,25 @@
 package reservix.ticket;
 
-import io.vavr.collection.Seq;
+import lombok.Builder;
+import reservix.AggregateRoot;
 
-class Ticket {
+import java.time.LocalDateTime;
+import java.util.List;
+
+public class Ticket extends AggregateRoot {
 
     private String ownerFullName;
     private String meetupName;
-    private String meetupTime;
-    private Seq<String> places;
+    private LocalDateTime meetupTime;
+    private List<String> places;
 
+    @Builder
+    public Ticket(String ownerFullName, String meetupName, LocalDateTime meetupTime, List<String> places) {
+        this.ownerFullName = ownerFullName;
+        this.meetupName = meetupName;
+        this.meetupTime = meetupTime;
+        this.places = places;
+
+        emitEvent(new TicketIssuedEvent(this));
+    }
 }
