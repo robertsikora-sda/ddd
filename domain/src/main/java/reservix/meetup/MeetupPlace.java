@@ -23,21 +23,12 @@ public class MeetupPlace extends AggregateRoot {
         RESERVED
     }
 
-    private MeetupPlace(PlaceId placeId, MeetupId meetupId, PlaceNumber placeNumber) {
+    public MeetupPlace(PlaceId placeId, MeetupId meetupId, PlaceNumber placeNumber) {
         this.id = placeId;
         this.meetupId = meetupId;
         this.placeNumber = placeNumber;
-    }
 
-    public static MeetupPlace createNewMeetupPlace(PlaceId placeId,
-                                  MeetupId meetupId,
-                                  PlaceNumber placeNumber) {
-
-        final MeetupPlace meetupPlace = new MeetupPlace(placeId, meetupId, placeNumber);
-
-        meetupPlace.emitEvent(new MeetupPlaceCreatedEvent(meetupPlace));
-
-        return meetupPlace;
+        emitEvent(new MeetupPlaceCreatedEvent(this));
     }
 
     public void selectPlace() {

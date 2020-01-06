@@ -8,8 +8,8 @@ import reservix.meetup.MeetupRepo;
 import reservix.user.UserId;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 @AllArgsConstructor
 public class MeetupService {
@@ -30,24 +30,18 @@ public class MeetupService {
         ).getId();
     }
 
-    public void selectMeetupPlaces(final MeetupId meetupId, final PlaceId ... placeIds) {
+    public void selectReservationPlaces(final MeetupId meetupId, final Collection<PlaceId> placeIds) {
         final Meetup meetup = meetupRepo.get(meetupId);
-        Stream.of(placeIds).forEach(
-                placeId -> {
-                    meetup.selectNewPlaces(loggedUserIdSupplier.get(), placeId);
-                    meetupRepo.save(meetup);
-                }
-        );
+        meetup.selectNewPlaces(loggedUserIdSupplier.get(), placeIds);
+
+        meetupRepo.save(meetup);
     }
 
-    public void unselectMeetupPlaces(final MeetupId meetupId, final PlaceId ... placeIds) {
+    public void unselectReservationMeetupPlaces(final MeetupId meetupId, final Collection<PlaceId> placeIds) {
         final Meetup meetup = meetupRepo.get(meetupId);
-        Stream.of(placeIds).forEach(
-                placeId -> {
-                    meetup.unselectPlaces(loggedUserIdSupplier.get(), placeId);
-                    meetupRepo.save(meetup);
-                }
-        );
+        meetup.unselectPlaces(loggedUserIdSupplier.get(), placeIds);
+
+        meetupRepo.save(meetup);
     }
 
     public void acceptReservation(final MeetupId meetupId) {

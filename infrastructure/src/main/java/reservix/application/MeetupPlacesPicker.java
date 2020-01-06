@@ -2,12 +2,12 @@ package reservix.application;
 
 import lombok.AllArgsConstructor;
 import reservix.PlaceId;
-import reservix.events.EventEmitter;
 import reservix.meetup.MeetupPlace;
 import reservix.meetup.MeetupPlaceRepo;
 import reservix.meetup.events.*;
 
 import javax.inject.Singleton;
+import java.util.UUID;
 import java.util.stream.IntStream;
 
 @Singleton
@@ -15,23 +15,15 @@ import java.util.stream.IntStream;
 public class MeetupPlacesPicker {
 
     private final MeetupPlaceRepo meetupPlaceRepo;
-    private final EventEmitter eventEmitter;
 
     public void initMeetupPlaces(final MeetupCreatedEvent event) {
 
         IntStream.range(0, event.getCreatedMeetup().getAvailablePlaces()).forEach(
-                i -> {
-
-                final MeetupPlace meetupPlace = meetupPlaceRepo.save(
-
-                        MeetupPlace.createNewMeetupPlace(PlaceId.generate(),
+                i -> meetupPlaceRepo.save(
+                        new MeetupPlace(new PlaceId(UUID.randomUUID()),
                                 event.getCreatedMeetup().getId(),
                                 event.getCreatedMeetup().getPlaceNumberAssignPolicy().next())
-
-                );
-
-                eventEmitter.emit(meetupPlace.getEvents());
-            }
+                )
 
         );
     }

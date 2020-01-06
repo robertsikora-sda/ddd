@@ -1,16 +1,20 @@
 package reservix.projection;
 
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Value
-class MeetupsProjectionDto {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class MeetupsProjectionDto {
 
-    private final String meetupId;
-    private final String ownerId;
-    private final String meetupName;
-    private final LocalDateTime meetupDateTime;
-    private final boolean areFreePlaces;
+    private String meetupId;
+    private String ownerId;
+    private String meetupName;
+    private LocalDateTime meetupDateTime;
+    private boolean areFreePlaces;
 
 }

@@ -1,20 +1,15 @@
 package reservix;
 
+import lombok.Value;
+
 import java.util.UUID;
 
+@Value
 public class PlaceId {
 
     private final UUID id;
 
-    public PlaceId(UUID id) {
-        this.id = id;
-    }
-
-    public static PlaceId generate() {
-        return new PlaceId(UUID.randomUUID());
-    }
-
-    public UUID getId() {
-        return id;
+    public static PlaceId of(String id) {
+        return new PlaceId(UUID.fromString(id));
     }
 }

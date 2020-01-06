@@ -9,6 +9,7 @@ import reservix.meetup.events.*;
 import reservix.user.UserId;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,16 +34,20 @@ public class Meetup extends AggregateRoot {
         this.emitEvent(new MeetupCreatedEvent(new MeetupProjection(this)));
     }
 
-    public void selectNewPlaces(final UserId userId, final PlaceId placeId) {
-        reservations.getUserReservation(userId).selectPlace(placeId);
+    public void selectNewPlaces(final UserId userId, final Collection<PlaceId> placeIds) {
+        placeIds.forEach(t -> {
+            reservations.getUserReservation(userId).selectPlace(t);
 
-        emitEvent(new MeetupPlaceSelectedEvent(placeId));
+            emitEvent(new MeetupPlaceSelectedEvent(t));
+        });
     }
 
-    public void unselectPlaces(final UserId userId, final PlaceId placeId) {
-        reservations.getUserReservation(userId).unselectPlace(placeId);
+    public void unselectPlaces(final UserId userId, final Collection<PlaceId> placeIds) {
+        placeIds.forEach(t -> {
+            reservations.getUserReservation(userId).unselectPlace(t);
 
-        emitEvent(new MeetupPlaceUnselectedEvent(placeId));
+            emitEvent(new MeetupPlaceUnselectedEvent(t));
+        });
     }
 
     public Reservation acceptReservation(final UserId userId) {

@@ -2,6 +2,7 @@ package reservix.command;
 
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.validation.Validated;
 import lombok.AllArgsConstructor;
@@ -27,4 +28,24 @@ class MeetupCommandController {
         return new CreateNewMeetupCommandResult(meetupId.getId());
     }
 
+    @Post("/meetups/{meetupId}/reservations/selectPlaces")
+    void selectReservationPlaces(@PathVariable final String meetupId, @Body @Valid final ChangeReservationPlacesCommand command) {
+
+        meetupService.selectReservationPlaces(MeetupId.of(meetupId), command.toPlaces());
+
+    }
+
+    @Post("/meetups/{meetupId}/reservations/unselectPlaces")
+    void unselectReservationPlaces(@PathVariable final String meetupId, @Body @Valid final ChangeReservationPlacesCommand command) {
+
+        meetupService.unselectReservationMeetupPlaces(MeetupId.of(meetupId), command.toPlaces());
+
+    }
+
+    @Post("/meetups/{meetupId}/reservations/accept")
+    void acceptReservation(@PathVariable final String meetupId) {
+
+        meetupService.acceptReservation(MeetupId.of(meetupId));
+
+    }
 }

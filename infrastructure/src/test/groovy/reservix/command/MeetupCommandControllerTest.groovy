@@ -22,14 +22,24 @@ class MeetupCommandControllerTest extends Specification {
 
     def "should create new meetup and initialize all places"() {
         when:
-        def result = restClientV1.createNewMeetup(new CreateNewMeetupCommand(
+            def meetup = createMeetup()
+        then:
+            meetup
+            restClientV1.getAllMeetups().size() == 1
+            restClientV1.getAllMeetupsPlaces(meetup.meetupId).size() == 10_000
+    }
+
+    def "should select few places for some meetup and accept reservation"() {
+      // given:
+      //      def meetup = createMeetup()
+      //  when:
+
+    }
+
+    def createMeetup() {
+        restClientV1.createNewMeetup(new CreateNewMeetupCommand(
                 "PGE Narodowy",
                 LocalDateTime.now().plusMonths(6),
-                10_000
-        ))
-        then:
-        result
-        result.meetupId
-
+                10_000))
     }
 }

@@ -1,15 +1,17 @@
 package reservix.projection;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
-@Getter
-class MeetupPlacesProjectionDto {
+public class MeetupPlacesProjectionDto {
 
-    private final String placeId;
-    private final String meetupId;
-    private final String placeNumber;
+    private String placeId;
+    private String meetupId;
+    private String placeNumber;
     private boolean isFree;
     private boolean isSelected;
     private boolean isReserved;
