@@ -31,7 +31,14 @@ class SimpleEventsEmitter implements EventEmitter {
 
     @Override
     public void emit(final Collection<Event> events) {
+        try {
+            routeEvents(events);
+        } finally {
+            events.clear();
+        }
+    }
 
+    private void routeEvents(final Collection<Event> events) {
         events.forEach(
                 event -> Match(event).of(
 
@@ -67,6 +74,5 @@ class SimpleEventsEmitter implements EventEmitter {
 
                         Case($(), e -> new DefaultEventListener().handle((Event) e)))
         );
-
     }
 }

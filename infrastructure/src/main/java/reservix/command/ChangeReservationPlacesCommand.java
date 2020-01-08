@@ -5,7 +5,6 @@ import lombok.Value;
 import reservix.PlaceId;
 
 import javax.validation.constraints.NotEmpty;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -14,7 +13,7 @@ import java.util.stream.Collectors;
 public class ChangeReservationPlacesCommand {
 
     @NotEmpty
-    private List<String> placeIds;
+    private Set<String> placeIds;
 
     public Set<PlaceId> toPlaces() {
         return placeIds.stream().map(PlaceId::of).collect(Collectors.toUnmodifiableSet());

@@ -2,11 +2,13 @@ package reservix.projection;
 
 import org.apache.commons.collections4.MultiMap;
 import org.apache.commons.collections4.map.MultiValueMap;
+import reservix.MeetupId;
 import reservix.PlaceId;
 
 import javax.inject.Singleton;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 @Singleton
 class MeetupsPlacesProjectionInMemoryRepo {
@@ -18,9 +20,10 @@ class MeetupsPlacesProjectionInMemoryRepo {
         return projectionDto;
     }
 
-    MeetupPlacesProjectionDto get(final PlaceId placeId) {
-        //return MEETUPS_PLACES_PROJECTION.get(placeId);
-        return null;
+    MeetupPlacesProjectionDto get(final MeetupId meetupId, final PlaceId placeId) {
+        return ((List<MeetupPlacesProjectionDto>)MEETUPS_PLACES_PROJECTION.get(meetupId.toString())).stream().filter(
+                t -> Objects.equals(t.getPlaceId(), placeId.toString())).findFirst().orElseThrow(() -> new IllegalStateException("Cannot find place for given id")
+        );
     }
 
     List<MeetupPlacesProjectionDto> findAllPlaces(final String meetupId) {

@@ -12,4 +12,9 @@ public class PlaceId {
     public static PlaceId of(String id) {
         return new PlaceId(UUID.fromString(id));
     }
+
+    @Override
+    public String toString() {
+        return id.toString();
+    }
 }

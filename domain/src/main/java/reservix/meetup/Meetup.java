@@ -38,7 +38,7 @@ public class Meetup extends AggregateRoot {
         placeIds.forEach(t -> {
             reservations.getUserReservation(userId).selectPlace(t);
 
-            emitEvent(new MeetupPlaceSelectedEvent(t));
+            emitEvent(new MeetupPlaceSelectedEvent(id, t));
         });
     }
 
@@ -46,7 +46,7 @@ public class Meetup extends AggregateRoot {
         placeIds.forEach(t -> {
             reservations.getUserReservation(userId).unselectPlace(t);
 
-            emitEvent(new MeetupPlaceUnselectedEvent(t));
+            emitEvent(new MeetupPlaceUnselectedEvent(id, t));
         });
     }
 
@@ -55,7 +55,7 @@ public class Meetup extends AggregateRoot {
 
         emitEvent(new ReservationAcceptedEvent(new MeetupProjection(this), List.copyOf(reservation.getPlaces())));
 
-        reservation.getPlaces().forEach(t -> emitEvent(new MeetupPlaceReservedEvent(t)));
+        reservation.getPlaces().forEach(t -> emitEvent(new MeetupPlaceReservedEvent(id, t)));
 
         return reservation;
     }
@@ -65,13 +65,9 @@ public class Meetup extends AggregateRoot {
 
         emitEvent(new ReservationRejectedEvent());
 
-        reservation.getPlaces().forEach(t -> emitEvent(new MeetupPlaceUnselectedEvent(t)));
+        reservation.getPlaces().forEach(t -> emitEvent(new MeetupPlaceUnselectedEvent(id, t)));
 
         return reservation;
-    }
-
-    public boolean areFreePlaces() {
-        return false;
     }
 
     @Value

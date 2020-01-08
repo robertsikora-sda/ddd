@@ -12,7 +12,9 @@ import java.util.function.Supplier;
 @Factory
 class ApplicationConfiguration {
 
-    private final Supplier<UserId> loggedUserIdSupplier = () -> new UserId(UUID.randomUUID());
+    private final Supplier<UserId> loggedUserIdSupplier = () -> new UserId(
+            UUID.fromString("fb53c6b9-7bda-4a84-9a5d-1467757d7e18")
+    );
 
     @Bean
     public MeetupService meetupService(final MeetupRepo meetupRepo) {

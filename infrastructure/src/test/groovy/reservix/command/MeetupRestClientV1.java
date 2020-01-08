@@ -8,7 +8,6 @@ import reservix.projection.MeetupPlacesProjectionDto;
 import reservix.projection.MeetupsProjectionDto;
 
 import java.util.List;
-import java.util.UUID;
 
 @Client("/v1")
 interface MeetupRestClientV1 {
@@ -17,18 +16,18 @@ interface MeetupRestClientV1 {
     CreateNewMeetupCommandResult createNewMeetup(@Body CreateNewMeetupCommand command);
 
     @Post("/meetups/{meetupId}/reservations/selectPlaces")
-    void selectReservationPlaces(@Body ChangeReservationPlacesCommand command);
+    void selectReservationPlaces(String meetupId, @Body ChangeReservationPlacesCommand command);
 
     @Post("/meetups/{meetupId}/reservations/unselectPlaces")
-    void unselectReservationPlaces(@Body ChangeReservationPlacesCommand command);
+    void unselectReservationPlaces(String meetupId, @Body ChangeReservationPlacesCommand command);
 
     @Post("/meetups/{meetupId}/reservations/accept")
-    void acceptReservation();
+    void acceptReservation(String meetupId);
 
     @Get("/queries/meetups")
     List<MeetupsProjectionDto> getAllMeetups();
 
     @Get("/queries/meetups/{meetupId}/places")
-    List<MeetupPlacesProjectionDto> getAllMeetupsPlaces(UUID meetupId);
+    List<MeetupPlacesProjectionDto> getAllMeetupsPlaces(String meetupId);
 
 }

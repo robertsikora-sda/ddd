@@ -36,14 +36,10 @@ public class MeetupPlace extends AggregateRoot {
             throw new IllegalStateException("Only free place can be selected!");
         }
         this.state = State.SELECTED;
-
-        emitEvent(new MeetupPlaceSelectedEvent(id));
     }
 
     public void unselectPlace() {
         this.state = State.FREE;
-
-        emitEvent(new MeetupPlaceUnselectedEvent(id));
     }
 
     public void reservePlace() {
@@ -51,8 +47,6 @@ public class MeetupPlace extends AggregateRoot {
             throw new IllegalStateException("Can reserve only place selected before");
         }
         this.state = State.RESERVED;
-
-        emitEvent(new MeetupPlaceReservedEvent(id));
     }
 
 }

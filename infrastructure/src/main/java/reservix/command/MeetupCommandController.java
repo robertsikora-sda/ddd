@@ -25,7 +25,7 @@ class MeetupCommandController {
                                       command.getMeetupDate(),
                                       command.getAvailablePlacesNumber());
 
-        return new CreateNewMeetupCommandResult(meetupId.getId());
+        return new CreateNewMeetupCommandResult(meetupId);
     }
 
     @Post("/meetups/{meetupId}/reservations/selectPlaces")

@@ -13,4 +13,8 @@ public class MeetupId {
         return new MeetupId(UUID.fromString(id));
     }
 
+    @Override
+    public String toString() {
+        return id.toString();
+    }
 }

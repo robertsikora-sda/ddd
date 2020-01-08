@@ -4,15 +4,18 @@ import lombok.Getter;
 import reservix.PlaceId;
 import reservix.user.UserId;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 class Reservation {
 
     private Status status;
     private final UserId ownerId;
-    private final List<PlaceId> places = new ArrayList<>();
+    private final LocalDateTime startDate;
+    private LocalDateTime finishDate;
+    private final Set<PlaceId> places = new HashSet<>();
 
     enum Status {
         NEW,
@@ -28,6 +31,7 @@ class Reservation {
     public Reservation(final UserId ownerId) {
         this.ownerId = ownerId;
         this.status = Status.NEW;
+        this.startDate = LocalDateTime.now();
     }
 
     void selectPlace(final PlaceId placeId) {
@@ -45,6 +49,7 @@ class Reservation {
         }
 
         status = Status.ACCEPTED;
+        finishDate = LocalDateTime.now();
 
         return this;
     }
@@ -55,6 +60,7 @@ class Reservation {
         }
 
         status = Status.REJECTED;
+        finishDate = LocalDateTime.now();
 
         return this;
     }
