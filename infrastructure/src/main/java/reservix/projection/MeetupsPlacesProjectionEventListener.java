@@ -9,6 +9,8 @@ import reservix.meetup.events.MeetupPlaceUnselectedEvent;
 
 import javax.inject.Singleton;
 
+import static reservix.projection.MeetupPlacesProjectionDto.Status.*;
+
 @Singleton
 @AllArgsConstructor
 public class MeetupsPlacesProjectionEventListener {
@@ -25,9 +27,7 @@ public class MeetupsPlacesProjectionEventListener {
                         meetupPlace.getId().getId().toString(),
                         meetupPlace.getMeetupId().getId().toString(),
                         meetupPlace.getPlaceNumber().getNumber(),
-                        meetupPlace.getState() == MeetupPlace.State.FREE,
-                        meetupPlace.getState() == MeetupPlace.State.SELECTED,
-                        meetupPlace.getState() == MeetupPlace.State.RESERVED
+                        FREE
                         )
         );
 
@@ -37,7 +37,7 @@ public class MeetupsPlacesProjectionEventListener {
     public MeetupPlaceSelectedEvent selectPlace(final MeetupPlaceSelectedEvent event) {
 
         final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(event.getMeetupId(), event.getPlaceId());
-        meetupPlace.select();
+        meetupPlace.setStatus(SELECTED);
 
         projectionRepo.save(meetupPlace);
 
@@ -47,7 +47,7 @@ public class MeetupsPlacesProjectionEventListener {
     public MeetupPlaceUnselectedEvent unselectPlace(final MeetupPlaceUnselectedEvent event) {
 
         final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(event.getMeetupId(), event.getPlaceId());
-        meetupPlace.unselect();
+        meetupPlace.setStatus(FREE);
 
         projectionRepo.save(meetupPlace);
 
@@ -57,7 +57,7 @@ public class MeetupsPlacesProjectionEventListener {
     public MeetupPlaceReservedEvent reservePlace(final MeetupPlaceReservedEvent event) {
 
         final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(event.getMeetupId(), event.getPlaceId());
-        meetupPlace.reserve();
+        meetupPlace.setStatus(RESERVED);
 
         projectionRepo.save(meetupPlace);
 

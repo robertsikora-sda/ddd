@@ -14,7 +14,7 @@ class RandomPlacesSelector {
             Set<String> selectedPlaces = new HashSet<>();
             do {
 
-                int randomPlace = new Random().nextInt(places.size() - 1);
+                int randomPlace = new Random().nextInt(places.size());
                 selectedPlaces.add(places.get(randomPlace).getPlaceId());
 
             } while (selectedPlaces.size() < desiredPlaces);

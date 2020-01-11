@@ -12,26 +12,12 @@ public class MeetupPlacesProjectionDto {
     private String placeId;
     private String meetupId;
     private String placeNumber;
-    private boolean isFree;
-    private boolean isSelected;
-    private boolean isReserved;
+    private Status status;
 
-    void select() {
-        this.isFree = false;
-        this.isSelected = true;
-        this.isReserved = false;
-    }
-
-    void unselect() {
-        this.isFree = true;
-        this.isSelected = false;
-        this.isReserved = false;
-    }
-
-    void reserve() {
-        this.isFree = false;
-        this.isSelected = false;
-        this.isReserved = true;
+    public enum Status {
+        FREE,
+        SELECTED,
+        RESERVED
     }
 
 }

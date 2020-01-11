@@ -2,6 +2,7 @@ package reservix.command
 
 import io.micronaut.context.ApplicationContext
 import io.micronaut.runtime.server.EmbeddedServer
+import reservix.projection.MeetupPlacesProjectionDto
 import spock.lang.AutoCleanup
 import spock.lang.Shared
 import spock.lang.Specification
@@ -26,21 +27,21 @@ class MeetupCommandControllerTest extends Specification {
         then:
             meetup
             restClientV1.getAllMeetups().size() == 1
-            restClientV1.getAllMeetupsPlaces(meetup.meetupId).size() == 12
+            getAllPlaces(meetup.meetupId).size() == 12
     }
 
     def "should select few places for some meetup and accept reservation"() {
        given:
             def meetup = createMeetup()
-            def randomPlaces = randomPlaces(meetup.meetupId)
+            def randomPlaces = randomPlaces(meetup.meetupId, 10)
        when:
             selectPlaces(meetup.meetupId, randomPlaces)
-            unselectPlaces(meetup.meetupId, randomPlaces.dropRight(1) as Set<String>)
+            unselectPlaces(meetup.meetupId, randomPlaces.dropRight(3) as Set<String>)
             acceptReservation(meetup.meetupId)
        then:
-            def allPlaces = restClientV1.getAllMeetupsPlaces(meetup.meetupId)
+            def allPlaces = getAllPlaces(meetup.meetupId)
             allPlaces.size() == 12
-            allPlaces.stream().filter{t -> t.reserved}.count() == 9
+            allPlaces.stream().filter{t -> t.status == MeetupPlacesProjectionDto.Status.RESERVED}.count() == 3
     }
 
     def createMeetup() {
@@ -50,9 +51,9 @@ class MeetupCommandControllerTest extends Specification {
                 12))
     }
 
-    def randomPlaces(String meetupId) {
+    def randomPlaces(String meetupId, int placesNumber) {
         RandomPlacesSelector
-                .randomSelector(restClientV1.getAllMeetupsPlaces(meetupId), 10).get()
+                .randomSelector(restClientV1.getAllMeetupsPlaces(meetupId), placesNumber).get()
     }
 
     def selectPlaces(String meetupId, Set<String> places) {
@@ -65,5 +66,9 @@ class MeetupCommandControllerTest extends Specification {
 
     def acceptReservation(String meetupId) {
         restClientV1.acceptReservation(meetupId)
+    }
+
+    def getAllPlaces(String meetupId) {
+        restClientV1.getAllMeetupsPlaces(meetupId)
     }
 }

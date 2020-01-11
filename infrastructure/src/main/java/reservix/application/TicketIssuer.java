@@ -30,7 +30,7 @@ public class TicketIssuer {
 
         );
 
-        notificationSender.sendNotification("", "Your ticket for is ready to download");
+        notificationSender.sendNotification("recipient@test.com", "Your ticket for is ready to download");
 
         return event;
     }

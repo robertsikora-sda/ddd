@@ -15,13 +15,13 @@ interface MeetupRestClientV1 {
     @Post("/commands/meetups")
     CreateNewMeetupCommandResult createNewMeetup(@Body CreateNewMeetupCommand command);
 
-    @Post("/meetups/{meetupId}/reservations/selectPlaces")
+    @Post("/commands/meetups/{meetupId}/reservations/selectPlaces")
     void selectReservationPlaces(String meetupId, @Body ChangeReservationPlacesCommand command);
 
-    @Post("/meetups/{meetupId}/reservations/unselectPlaces")
+    @Post("/commands/meetups/{meetupId}/reservations/unselectPlaces")
     void unselectReservationPlaces(String meetupId, @Body ChangeReservationPlacesCommand command);
 
-    @Post("/meetups/{meetupId}/reservations/accept")
+    @Post("/commands/meetups/{meetupId}/reservations/accept")
     void acceptReservation(String meetupId);
 
     @Get("/queries/meetups")
