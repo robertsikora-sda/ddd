@@ -1,8 +1,7 @@
 package reservix.application;
 
 import lombok.AllArgsConstructor;
-import reservix.meetup.MeetupProjection;
-import reservix.meetup.events.ReservationAcceptedEvent;
+import reservix.reservation.events.ReservationAcceptedEvent;
 import reservix.ticket.NotificationSender;
 import reservix.ticket.Ticket;
 import reservix.ticket.TicketRepo;
@@ -18,12 +17,10 @@ public class TicketIssuer {
     private final NotificationSender notificationSender;
 
     public ReservationAcceptedEvent issueNewTicket(final ReservationAcceptedEvent event) {
-        final MeetupProjection meetupProjection = event.getMeetupProjection();
-
         ticketRepo.save(Ticket.builder()
                 .ownerFullName("TO-DO")
-                .meetupName(meetupProjection.getName())
-                .meetupTime(meetupProjection.getTime())
+                .meetupName(event.getName().getValue())
+                .meetupTime(event.getTime().getValue())
                 .places(event.getReservedPlaces().stream()
                         .map(t -> t.getId().toString()).collect(Collectors.toUnmodifiableList()))
                 .build()

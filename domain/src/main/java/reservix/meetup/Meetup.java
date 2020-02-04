@@ -3,14 +3,10 @@ package reservix.meetup;
 import lombok.Getter;
 import lombok.Value;
 import reservix.AggregateRoot;
-import reservix.MeetupId;
-import reservix.PlaceId;
-import reservix.meetup.events.*;
+import reservix.meetup.events.MeetupCreatedEvent;
 import reservix.user.UserId;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -18,81 +14,70 @@ public class Meetup extends AggregateRoot {
 
     private MeetupId id;
     private UserId ownerId;
-    private MeetupName name;
-    private MeetupTime time;
-    private int availablePlaces;
-    private PlaceNumberAssignPolicy placeNumberAssignPolicy = new NumericPlaceNumberPolicy();
-    private final Reservations reservations = new Reservations();
+    private Name name;
+    private Time time;
+    private AvailablePlaces availablePlaces;
+    private PlaceNumberPolicy placeNumberPolicy;
 
-    public Meetup(UserId ownerId, String name, LocalDateTime time, int availablePlaces) {
+    public Meetup(final UserId ownerId,
+                   final Name name,
+                   final Time time,
+                   final AvailablePlaces availablePlaces,
+                   final PlaceNumberPolicy placeNumberPolicy) {
+
         this.id = new MeetupId(UUID.randomUUID());
         this.ownerId = ownerId;
-        this.name = new MeetupName(name);
-        this.time = new MeetupTime(time);
+        this.name = name;
+        this.time = time;
         this.availablePlaces = availablePlaces;
+        this.placeNumberPolicy = placeNumberPolicy;
 
-        this.emitEvent(new MeetupCreatedEvent(new MeetupProjection(this)));
-    }
-
-    public void selectNewPlaces(final UserId userId, final Collection<PlaceId> placeIds) {
-        placeIds.forEach(t -> {
-            reservations.getUserReservation(userId).selectPlace(t);
-
-            emitEvent(new MeetupPlaceSelectedEvent(id, t));
-        });
-    }
-
-    public void unselectPlaces(final UserId userId, final Collection<PlaceId> placeIds) {
-        placeIds.forEach(t -> {
-            reservations.getUserReservation(userId).unselectPlace(t);
-
-            emitEvent(new MeetupPlaceUnselectedEvent(id, t));
-        });
-    }
-
-    public Reservation acceptReservation(final UserId userId) {
-        final Reservation reservation = reservations.getUserReservation(userId).accept();
-
-        emitEvent(new ReservationAcceptedEvent(new MeetupProjection(this), List.copyOf(reservation.getPlaces())));
-
-        reservation.getPlaces().forEach(t -> emitEvent(new MeetupPlaceReservedEvent(id, t)));
-
-        return reservation;
-    }
-
-    public Reservation rejectReservation(final UserId userId) {
-        final Reservation reservation = reservations.getUserReservation(userId).reject();
-
-        emitEvent(new ReservationRejectedEvent());
-
-        reservation.getPlaces().forEach(t -> emitEvent(new MeetupPlaceUnselectedEvent(id, t)));
-
-        return reservation;
+        this.emitEvent(new MeetupCreatedEvent(id,
+                                              name,
+                                              time,
+                                              ownerId,
+                                              availablePlaces,
+                                              placeNumberPolicy));
     }
 
     @Value
-    static class MeetupName {
+    public static class Name {
 
-        private String name;
+        private final static int MAX_LENGTH = 100;
 
-        MeetupName(final String name) {
-            if(name.length() > 20) {
-                throw new IllegalArgumentException("");
+        private String value;
+
+        public Name(final String name) {
+            if(name.length() > MAX_LENGTH) {
+                throw new IllegalArgumentException("Name length cannot exceed 20 characters !");
             }
-            this.name = name;
+            this.value = name;
         }
     }
 
     @Value
-    static class MeetupTime {
+    public static class Time {
 
-        private LocalDateTime time;
+        private LocalDateTime value;
 
-        MeetupTime(final LocalDateTime time) {
-            if(time.isBefore(LocalDateTime.now())) {
-                throw new IllegalArgumentException("");
+        public Time(final LocalDateTime time) {
+            if(time.isBefore(LocalDateTime.now().plusDays(7))) {
+                throw new IllegalArgumentException("Meetup should be scheduled with 7 days in advance !");
             }
-            this.time = time;
+            this.value = time;
+        }
+    }
+
+    @Value
+    public static class AvailablePlaces {
+
+        private int value;
+
+        public AvailablePlaces(final int value) {
+            if(value <= 0) {
+                throw new IllegalArgumentException("Places number should be positive !");
+            }
+            this.value = value;
         }
     }
 }

@@ -2,8 +2,8 @@ package reservix.projection;
 
 import org.apache.commons.collections4.MultiMap;
 import org.apache.commons.collections4.map.MultiValueMap;
-import reservix.MeetupId;
-import reservix.PlaceId;
+import reservix.meetup.MeetupId;
+import reservix.reservation.PlaceId;
 
 import javax.inject.Singleton;
 import java.util.Collections;

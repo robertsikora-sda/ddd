@@ -1,10 +1,10 @@
 package reservix.persistence;
 
 import lombok.AllArgsConstructor;
-import reservix.PlaceId;
+import reservix.reservation.PlaceId;
 import reservix.events.EventEmitter;
 import reservix.meetup.MeetupPlace;
-import reservix.meetup.MeetupPlaceRepo;
+import reservix.meetup.MeetupPlaceRepository;
 
 import javax.inject.Singleton;
 import java.util.Map;
@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Singleton
 @AllArgsConstructor
-class MeetupPlacesInMemoryRepo implements MeetupPlaceRepo {
+class MeetupPlacesInMemoryRepository implements MeetupPlaceRepository {
 
     private static final Map<PlaceId, MeetupPlace> INSTANCES = new ConcurrentHashMap<>();
 

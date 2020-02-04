@@ -1,4 +1,4 @@
-package reservix.meetup.events;
+package reservix.reservation.events;
 
 import lombok.Value;
 import reservix.Event;

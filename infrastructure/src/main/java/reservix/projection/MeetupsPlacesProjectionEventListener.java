@@ -3,9 +3,9 @@ package reservix.projection;
 import lombok.AllArgsConstructor;
 import reservix.meetup.MeetupPlace;
 import reservix.meetup.events.MeetupPlaceCreatedEvent;
-import reservix.meetup.events.MeetupPlaceReservedEvent;
-import reservix.meetup.events.MeetupPlaceSelectedEvent;
-import reservix.meetup.events.MeetupPlaceUnselectedEvent;
+import reservix.reservation.events.PlaceReservedEvent;
+import reservix.reservation.events.PlaceSelectedEvent;
+import reservix.reservation.events.PlaceUnselectedEvent;
 
 import javax.inject.Singleton;
 
@@ -34,7 +34,7 @@ public class MeetupsPlacesProjectionEventListener {
         return event;
     }
 
-    public MeetupPlaceSelectedEvent selectPlace(final MeetupPlaceSelectedEvent event) {
+    public PlaceSelectedEvent selectPlace(final PlaceSelectedEvent event) {
 
         final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(event.getMeetupId(), event.getPlaceId());
         meetupPlace.setStatus(SELECTED);
@@ -44,7 +44,7 @@ public class MeetupsPlacesProjectionEventListener {
         return event;
     }
 
-    public MeetupPlaceUnselectedEvent unselectPlace(final MeetupPlaceUnselectedEvent event) {
+    public PlaceUnselectedEvent unselectPlace(final PlaceUnselectedEvent event) {
 
         final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(event.getMeetupId(), event.getPlaceId());
         meetupPlace.setStatus(FREE);
@@ -54,7 +54,7 @@ public class MeetupsPlacesProjectionEventListener {
         return event;
     }
 
-    public MeetupPlaceReservedEvent reservePlace(final MeetupPlaceReservedEvent event) {
+    public PlaceReservedEvent reservePlace(final PlaceReservedEvent event) {
 
         final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(event.getMeetupId(), event.getPlaceId());
         meetupPlace.setStatus(RESERVED);

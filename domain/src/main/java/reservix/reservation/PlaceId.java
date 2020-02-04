@@ -1,4 +1,4 @@
-package reservix;
+package reservix.reservation;
 
 import lombok.Value;
 

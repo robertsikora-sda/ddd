@@ -7,6 +7,10 @@ import reservix.meetup.events.*;
 import reservix.application.InvoiceIssuer;
 import reservix.projection.MeetupsPlacesProjectionEventListener;
 import reservix.projection.MeetupsProjectionEventListener;
+import reservix.reservation.events.PlaceReservedEvent;
+import reservix.reservation.events.PlaceSelectedEvent;
+import reservix.reservation.events.PlaceUnselectedEvent;
+import reservix.reservation.events.ReservationAcceptedEvent;
 import reservix.ticket.TicketIssuedEvent;
 import reservix.application.TicketIssuer;
 
@@ -50,19 +54,19 @@ class SimpleEventsEmitter implements EventEmitter {
 
                         Case($(instanceOf(MeetupPlaceCreatedEvent.class)), placesProjectionEventListener::initMeetupsPlacesProjection),
 
-                        Case($(instanceOf(MeetupPlaceSelectedEvent.class)), e -> {
+                        Case($(instanceOf(PlaceSelectedEvent.class)), e -> {
                             placesProjectionEventListener.selectPlace(e);
                             pickerProvider.get().placeSelected(e);
                             return e;
                         }),
 
-                        Case($(instanceOf(MeetupPlaceUnselectedEvent.class)), e -> {
+                        Case($(instanceOf(PlaceUnselectedEvent.class)), e -> {
                             placesProjectionEventListener.unselectPlace(e);
                             pickerProvider.get().placeUnselected(e);
                             return e;
                         }),
 
-                        Case($(instanceOf(MeetupPlaceReservedEvent.class)), e -> {
+                        Case($(instanceOf(PlaceReservedEvent.class)), e -> {
                             placesProjectionEventListener.reservePlace(e);
                             pickerProvider.get().placeReserved(e);
                             return e;

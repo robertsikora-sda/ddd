@@ -5,7 +5,7 @@ import io.micronaut.core.convert.format.Format;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Value;
-import reservix.MeetupId;
+import reservix.meetup.MeetupId;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

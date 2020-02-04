@@ -1,8 +1,8 @@
 package reservix.meetup;
 
-import reservix.PlaceId;
+import reservix.reservation.PlaceId;
 
-public interface MeetupPlaceRepo {
+public interface MeetupPlaceRepository {
 
     MeetupPlace get(PlaceId id);
 

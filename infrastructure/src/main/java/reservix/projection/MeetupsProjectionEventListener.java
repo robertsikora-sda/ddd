@@ -1,7 +1,6 @@
 package reservix.projection;
 
 import lombok.AllArgsConstructor;
-import reservix.meetup.MeetupProjection;
 import reservix.meetup.events.MeetupCreatedEvent;
 
 import javax.inject.Singleton;
@@ -14,16 +13,14 @@ public class MeetupsProjectionEventListener {
 
     public MeetupCreatedEvent updateMeetupsProjection(final MeetupCreatedEvent event) {
 
-        final MeetupProjection createdMeetup = event.getCreatedMeetup();
-
         projectionRepo.save(
 
                 new MeetupsProjectionDto(
-                        createdMeetup.getId().getId().toString(),
-                        createdMeetup.getOwnerId().getId().toString(),
-                        createdMeetup.getName(),
-                        createdMeetup.getTime(),
-                        createdMeetup.isFreePlaces()
+                        String.valueOf(event.getMeetupId().getId()),
+                        String.valueOf(event.getOwner().getId()),
+                        event.getName().getValue(),
+                        event.getTime().getValue(),
+                        true
                 )
         );
 

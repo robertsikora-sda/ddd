@@ -1,15 +1,23 @@
 package reservix.command;
 
+import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.validation.Validated;
 import lombok.AllArgsConstructor;
-import reservix.MeetupId;
+import reservix.meetup.MeetupId;
+import reservix.reservation.PlaceId;
 import reservix.application.MeetupService;
+import reservix.application.ReservationService;
+import reservix.reservation.PlaceSelectionOutcome;
+import reservix.reservation.ReservationId;
 
 import javax.validation.Valid;
+
+import static io.vavr.API.*;
+import static io.vavr.Predicates.instanceOf;
 
 @Validated
 @Controller("/v1/commands")
@@ -17,35 +25,59 @@ import javax.validation.Valid;
 class MeetupCommandController {
 
     private final MeetupService meetupService;
+    private final ReservationService reservationService;
 
-    @Post("/meetups")
+    @Post("/meetups/create")
     CreateNewMeetupCommandResult createNewMeetup(@Body @Valid final CreateNewMeetupCommand command) {
 
-        final MeetupId meetupId = meetupService.createNewMeetup(command.getMeetupName(),
-                                      command.getMeetupDate(),
-                                      command.getAvailablePlacesNumber());
+        return new CreateNewMeetupCommandResult(
 
-        return new CreateNewMeetupCommandResult(meetupId);
+                meetupService.createNewMeetup(command.getMeetupName(),
+                command.getMeetupDate(),
+                command.getAvailablePlacesNumber()).getMeetupId()
+
+        );
     }
 
-    @Post("/meetups/{meetupId}/reservations/selectPlaces")
-    void selectReservationPlaces(@PathVariable final String meetupId, @Body @Valid final ChangeReservationPlacesCommand command) {
+    @Post("/meetups/{meetupId}/reservations/create")
+    CreateNewReservationResult createNewReservation(@PathVariable final String meetupId) {
 
-        meetupService.selectReservationPlaces(MeetupId.of(meetupId), command.toPlaces());
+        return new CreateNewReservationResult(
+
+                reservationService.createNewReservation(MeetupId.of(meetupId)).getId()
+
+        );
+    }
+
+    @Post("/reservations/{reservationId}/selectPlace")
+    HttpResponse selectReservationPlace(@PathVariable final String reservationId, @Body @Valid final ChangeReservationPlacesCommand command) {
+
+        return Match(reservationService.selectReservationPlace(ReservationId.of(reservationId), PlaceId.of(command.getPlaceId()))).of(
+
+                Case($(instanceOf(PlaceSelectionOutcome.PlaceSelected.class)), HttpResponse.ok()),
+
+                Case($(instanceOf(PlaceSelectionOutcome.PlaceOccupiedError.class)), HttpResponse.badRequest("Place already selected. Please choose another one")));
 
     }
 
-    @Post("/meetups/{meetupId}/reservations/unselectPlaces")
-    void unselectReservationPlaces(@PathVariable final String meetupId, @Body @Valid final ChangeReservationPlacesCommand command) {
+    @Post("/reservations/{reservationId}/unselectPlace")
+    void unselectReservationPlaces(@PathVariable final String reservationId, @Body @Valid final ChangeReservationPlacesCommand command) {
 
-        meetupService.unselectReservationMeetupPlaces(MeetupId.of(meetupId), command.toPlaces());
+        reservationService.unselectReservationMeetupPlace(ReservationId.of(reservationId), PlaceId.of(command.getPlaceId()));
 
     }
 
-    @Post("/meetups/{meetupId}/reservations/accept")
-    void acceptReservation(@PathVariable final String meetupId) {
+    @Post("/reservations/{reservationId}/accept")
+    void acceptReservation(@PathVariable final String reservationId) {
 
-        meetupService.acceptReservation(MeetupId.of(meetupId));
+        reservationService.acceptReservation(ReservationId.of(reservationId));
+
+    }
+
+    @Post("/reservations/{reservationId}/reject")
+    void rejectReservation(@PathVariable final String reservationId) {
+
+        reservationService.rejectReservation(ReservationId.of(reservationId));
 
     }
 }

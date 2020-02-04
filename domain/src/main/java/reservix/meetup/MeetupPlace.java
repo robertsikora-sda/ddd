@@ -2,12 +2,8 @@ package reservix.meetup;
 
 import lombok.Getter;
 import reservix.AggregateRoot;
-import reservix.MeetupId;
-import reservix.PlaceId;
+import reservix.reservation.PlaceId;
 import reservix.meetup.events.MeetupPlaceCreatedEvent;
-import reservix.meetup.events.MeetupPlaceReservedEvent;
-import reservix.meetup.events.MeetupPlaceSelectedEvent;
-import reservix.meetup.events.MeetupPlaceUnselectedEvent;
 
 @Getter
 public class MeetupPlace extends AggregateRoot {

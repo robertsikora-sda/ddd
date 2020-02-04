@@ -1,10 +1,13 @@
 package reservix.application;
 
 import lombok.AllArgsConstructor;
-import reservix.PlaceId;
+import reservix.reservation.PlaceId;
 import reservix.meetup.MeetupPlace;
-import reservix.meetup.MeetupPlaceRepo;
+import reservix.meetup.MeetupPlaceRepository;
 import reservix.meetup.events.*;
+import reservix.reservation.events.PlaceReservedEvent;
+import reservix.reservation.events.PlaceSelectedEvent;
+import reservix.reservation.events.PlaceUnselectedEvent;
 
 import javax.inject.Singleton;
 import java.util.UUID;
@@ -14,39 +17,39 @@ import java.util.stream.IntStream;
 @AllArgsConstructor
 public class MeetupPlacesPicker {
 
-    private final MeetupPlaceRepo meetupPlaceRepo;
+    private final MeetupPlaceRepository meetupPlaceRepository;
 
     public void initMeetupPlaces(final MeetupCreatedEvent event) {
 
-        IntStream.range(0, event.getCreatedMeetup().getAvailablePlaces()).forEach(
-                i -> meetupPlaceRepo.save(
+        IntStream.range(0, event.getPlaces().getValue()).forEach(
+                i -> meetupPlaceRepository.save(
                         new MeetupPlace(new PlaceId(UUID.randomUUID()),
-                                event.getCreatedMeetup().getId(),
-                                event.getCreatedMeetup().getPlaceNumberAssignPolicy().next())
+                                event.getMeetupId(),
+                                event.getPlaceNumberPolicy().generate())
                 )
 
         );
     }
 
-    public void placeSelected(final MeetupPlaceSelectedEvent event) {
-        final MeetupPlace meetupPlace = meetupPlaceRepo.get(event.getPlaceId());
+    public void placeSelected(final PlaceSelectedEvent event) {
+        final MeetupPlace meetupPlace = meetupPlaceRepository.get(event.getPlaceId());
         meetupPlace.selectPlace();
 
-        meetupPlaceRepo.save(meetupPlace);
+        meetupPlaceRepository.save(meetupPlace);
     }
 
-    public void placeUnselected(final MeetupPlaceUnselectedEvent event) {
-        final MeetupPlace meetupPlace = meetupPlaceRepo.get(event.getPlaceId());
+    public void placeUnselected(final PlaceUnselectedEvent event) {
+        final MeetupPlace meetupPlace = meetupPlaceRepository.get(event.getPlaceId());
         meetupPlace.unselectPlace();
 
-        meetupPlaceRepo.save(meetupPlace);
+        meetupPlaceRepository.save(meetupPlace);
     }
 
-    public void placeReserved(final MeetupPlaceReservedEvent event) {
-        final MeetupPlace meetupPlace = meetupPlaceRepo.get(event.getPlaceId());
+    public void placeReserved(final PlaceReservedEvent event) {
+        final MeetupPlace meetupPlace = meetupPlaceRepository.get(event.getPlaceId());
         meetupPlace.reservePlace();
 
-        meetupPlaceRepo.save(meetupPlace);
+        meetupPlaceRepository.save(meetupPlace);
     }
 
 }
