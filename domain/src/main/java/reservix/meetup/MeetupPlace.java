@@ -1,48 +1,55 @@
 package reservix.meetup;
 
+import io.vavr.collection.HashMap;
+import io.vavr.collection.HashSet;
 import lombok.Getter;
-import reservix.AggregateRoot;
-import reservix.reservation.PlaceId;
-import reservix.meetup.events.MeetupPlaceCreatedEvent;
+import reservix.StateMachine;
+
+import static reservix.meetup.MeetupPlace.PlaceState.FREE;
+import static reservix.meetup.MeetupPlace.PlaceState.RESERVED;
+import static reservix.meetup.MeetupPlace.PlaceState.SELECTED;
+
 
 @Getter
-public class MeetupPlace extends AggregateRoot {
+public class MeetupPlace {
 
-    private PlaceId id;
-    private MeetupId meetupId;
-    private PlaceNumber placeNumber;
-    private State state = State.FREE;
-
-    public enum State {
+    public enum PlaceState {
         FREE,
         SELECTED,
         RESERVED
     }
 
-    public MeetupPlace(PlaceId placeId, MeetupId meetupId, PlaceNumber placeNumber) {
+    private final StateMachine<PlaceState> stateMachine = new StateMachine<>(
+
+            HashMap.of(
+
+                    FREE,     HashSet.of(SELECTED),
+                    SELECTED, HashSet.of(FREE, RESERVED),
+                    RESERVED, HashSet.of(FREE)
+
+            )
+    );
+
+    private PlaceId id;
+    private PlaceState placeState = FREE;
+
+    public MeetupPlace(final PlaceId placeId) {
         this.id = placeId;
-        this.meetupId = meetupId;
-        this.placeNumber = placeNumber;
-
-        emitEvent(new MeetupPlaceCreatedEvent(this));
     }
 
-    public void selectPlace() {
-        if(state != State.FREE) {
-            throw new IllegalStateException("Only free place can be selected!");
-        }
-        this.state = State.SELECTED;
+    public MeetupPlace selectPlace() {
+        stateMachine.changeState(placeState, HashSet.of(FREE), SELECTED);
+        return this;
     }
 
-    public void unselectPlace() {
-        this.state = State.FREE;
+    public MeetupPlace unselectPlace() {
+        stateMachine.changeState(placeState, HashSet.of(SELECTED, RESERVED), FREE);
+        return this;
     }
 
-    public void reservePlace() {
-        if(state != State.SELECTED) {
-            throw new IllegalStateException("Can reserve only place selected before");
-        }
-        this.state = State.RESERVED;
+    public MeetupPlace reservePlace() {
+        stateMachine.changeState(placeState, HashSet.of(SELECTED), RESERVED);
+        return this;
     }
 
 }

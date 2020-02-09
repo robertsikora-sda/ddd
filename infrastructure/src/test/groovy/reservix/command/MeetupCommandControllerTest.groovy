@@ -52,8 +52,7 @@ class MeetupCommandControllerTest extends Specification {
     }
 
     def randomPlaces(String meetupId, int placesNumber) {
-        RandomPlacesSelector
-                .randomSelector(restClientV1.getAllMeetupsPlaces(meetupId), placesNumber).get()
+        RandomPlacesSelector.randomSelector(restClientV1.getAllMeetupsPlaces(meetupId), placesNumber).get()
     }
 
     def selectPlaces(String meetupId, Set<String> places) {

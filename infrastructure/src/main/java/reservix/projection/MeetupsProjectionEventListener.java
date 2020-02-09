@@ -11,19 +11,18 @@ public class MeetupsProjectionEventListener {
 
     private final MeetupsProjectionInMemoryRepo projectionRepo;
 
-    public MeetupCreatedEvent updateMeetupsProjection(final MeetupCreatedEvent event) {
+    public MeetupsProjectionDto onMeetupCreatedEvent(final MeetupCreatedEvent event) {
 
-        projectionRepo.save(
+        return projectionRepo.save(
 
                 new MeetupsProjectionDto(
                         String.valueOf(event.getMeetupId().getId()),
                         String.valueOf(event.getOwner().getId()),
-                        event.getName().getValue(),
-                        event.getTime().getValue(),
+                        event.getMeetupName(),
+                        event.getMeetupTime(),
                         true
                 )
-        );
 
-        return event;
+        );
     }
 }

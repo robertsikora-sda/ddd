@@ -8,16 +8,16 @@ import io.micronaut.http.annotation.Post;
 import io.micronaut.validation.Validated;
 import lombok.AllArgsConstructor;
 import reservix.meetup.MeetupId;
-import reservix.reservation.PlaceId;
+import reservix.meetup.PlaceId;
 import reservix.application.MeetupService;
 import reservix.application.ReservationService;
-import reservix.reservation.PlaceSelectionOutcome;
 import reservix.reservation.ReservationId;
 
 import javax.validation.Valid;
 
 import static io.vavr.API.*;
-import static io.vavr.Predicates.instanceOf;
+import static io.vavr.Patterns.$Left;
+import static io.vavr.Patterns.$Right;
 
 @Validated
 @Controller("/v1/commands")
@@ -54,16 +54,16 @@ class MeetupCommandController {
 
         return Match(reservationService.selectReservationPlace(ReservationId.of(reservationId), PlaceId.of(command.getPlaceId()))).of(
 
-                Case($(instanceOf(PlaceSelectionOutcome.PlaceSelected.class)), HttpResponse.ok()),
+                Case($Right($()), HttpResponse.ok()),
 
-                Case($(instanceOf(PlaceSelectionOutcome.PlaceOccupiedError.class)), HttpResponse.badRequest("Place already selected. Please choose another one")));
+                Case($Left($()), HttpResponse.badRequest("Place already selected. Please choose another one")));
 
     }
 
     @Post("/reservations/{reservationId}/unselectPlace")
     void unselectReservationPlaces(@PathVariable final String reservationId, @Body @Valid final ChangeReservationPlacesCommand command) {
 
-        reservationService.unselectReservationMeetupPlace(ReservationId.of(reservationId), PlaceId.of(command.getPlaceId()));
+        reservationService.unselectReservationPlace(ReservationId.of(reservationId), PlaceId.of(command.getPlaceId()));
 
     }
 

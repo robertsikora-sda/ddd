@@ -1,15 +1,16 @@
 package reservix.reservation;
 
-import lombok.Value;
-
 import java.util.UUID;
 
-@Value
-public class ReservationId {
+public final class ReservationId {
 
-    private UUID id;
+    private final UUID id;
 
-    public static ReservationId newId() {
+    private ReservationId(UUID id) {
+        this.id = id;
+    }
+
+    public static ReservationId id() {
         return new ReservationId(UUID.randomUUID());
     }
 

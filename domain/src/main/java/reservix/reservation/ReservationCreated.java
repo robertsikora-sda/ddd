@@ -5,6 +5,6 @@ import lombok.Value;
 @Value
 public class ReservationCreated {
 
-    private final ReservationId id;
+    private ReservationId id;
 
 }

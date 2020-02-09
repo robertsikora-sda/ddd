@@ -5,6 +5,6 @@ import lombok.Value;
 @Value
 public class PlaceNumber {
 
-    private final String number;
+    private String number;
 
 }

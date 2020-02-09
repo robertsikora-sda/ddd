@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="772952fd-2646-4f84-abd1-c50970aced95" name="Default Changelist" comment="" />
+    <list default="true" id="772952fd-2646-4f84-abd1-c50970aced95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/StateMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/AggregateRoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/AggregateRoot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Meetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Meetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlaceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumberPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumberPolicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupCreatedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceCreatedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceAvailabilityValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceAvailabilityValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceSelectionOutcome.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceSelectionOutcome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceUnselected.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceUnselected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationAccessForbiddenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationAccessForbiddenException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/PlaceReservedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/PlaceSelectedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/PlaceSelectedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/PlaceUnselectedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/PlaceUnselectedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/ReservationAcceptedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/ReservationAcceptedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/ReservationRejectedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/ReservationRejectedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/reservix/ticket/NotificationSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupPlacesPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupPlacesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/NotificationSenderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/NotificationSenderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/TicketIssuer.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/TicketIssuer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/MeetupCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/MeetupCommandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/EventEmitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/EventEmitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/SimpleEventsEmitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/SimpleEventsEmitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/MeetupPlacesInMemoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupPlacesProjectionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupPlacesProjectionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupProjectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupProjectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionInMemoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionInMemoryRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupCommandControllerTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupCommandControllerTest.groovy" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -13,6 +60,7 @@
     <ignored path="$PROJECT_DIR$/application/out/" />
     <ignored path="$PROJECT_DIR$/infrastructure/.gradle/" />
     <ignored path="$PROJECT_DIR$/infrastructure/build/" />
+    <ignored path="$PROJECT_DIR$/domain/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,20 +150,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infrastructure/build/reports/tests/test/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="130">
+              <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,22 +163,59 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupRestClientV1.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vavr/vavr/0.10.0/449a67da679841ddd8340f477e1501445999a562/vavr-0.10.0-sources.jar!/io/vavr/collection/HashSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="118">
+              <caret line="38" column="44" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vavr/vavr/0.10.0/449a67da679841ddd8340f477e1501445999a562/vavr-0.10.0-sources.jar!/io/vavr/collection/Set.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+            <state relative-caret-position="231">
+              <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib/src.zip!/java.base/java/util/stream/Stream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="1107" column="16" selection-start-line="1107" selection-start-column="16" selection-end-line="1107" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceId.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupId.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding>
+                <element signature="e#384#385#0" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,29 +223,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupPlacesProjectionDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceSelectedEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupPlacesPicker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="34" column="28" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="28" />
+              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -178,19 +233,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlaceRepo.java">
+        <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupProjectionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/MeetupPlacesInMemoryRepo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="171">
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,12 +245,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionEventListener.java">
+        <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionInMemoryRepo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="143">
+              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#457#458#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -223,6 +271,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>micronaut-test-spock</find>
+      <find>Meetup</find>
+      <find>mutable</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -236,57 +286,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlacesPicker.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupProjection.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/configuration/DomainConfiguration.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumberAssignPolicy.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/payment/InvoiceIssuer.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/InvoiceIssuer.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Reservation.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/MeetupPlaceUnselectedEvent.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/FreePlaceChecker.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/user/LoggedUserSupplier.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupCreated.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationAccepted.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationRejected.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/ChangeReservationPlacesCommand.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/CreateNewReservationResult.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/PlaceReservedEvent.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/PlaceSelectedEvent.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/PlaceUnselectedEvent.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceAvailabilityValidator.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/NumericPlaceNumberPolicy.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupPlacesPicker.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/DefaultEventListener.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupCommandControllerTest.groovy" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceSelectionOutcome.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/ReservationService.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/MeetupCommandController.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceId.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationId.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/ReservationAcceptedEvent.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/ReservationRejectedEvent.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumber.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/MachineState.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/StateMachine.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/Reservation.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumberPolicy.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupService.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationCreated.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationNotFoundException.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationAccessForbiddenException.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationRepository.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/NotificationSenderService.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlace.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupPlacesManager.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/TicketIssuer.java" />
         <option value="$PROJECT_DIR$/domain/src/main/java/reservix/AggregateRoot.java" />
         <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/EventEmitter.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionInMemoryRepo.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupProjectionController.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/MeetupRestClient.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupRestClient.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/TicketInMemoryRepo.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/MeetupInMemoryRepo.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/NotificationSenderImpl.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Reservations.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/DefaultEventListener.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/NotificationSenderImpl.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionDto.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/MeetupPlacesInMemoryRepo.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/AcceptReservationCommand.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/UnselectReservationPlacesCommand.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupPlacesPicker.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupService.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/SelectReservationPlacesCommand.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Reservation.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/ChangeReservationPlacesCommand.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/CreateNewMeetupCommand.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlace.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceSelectedEvent.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceReservedEvent.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceUnselectedEvent.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/MeetupId.java" />
-        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/PlaceId.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupId.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupCreatedEvent.java" />
         <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Meetup.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/configuration/ApplicationConfiguration.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/SimpleEventsEmitter.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/NotificationSenderService.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/TicketIssuer.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/RandomPlacesSelector.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/RandomPlacesSelectorTest.groovy" />
-        <option value="$PROJECT_DIR$/infrastructure/build.gradle" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/MeetupCommandController.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupRestClientV1.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionEventListener.java" />
         <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionEventListener.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/SimpleEventsEmitter.java" />
+        <option value="$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceId.java" />
         <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupPlacesProjectionDto.java" />
-        <option value="$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupCommandControllerTest.groovy" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupProjectionController.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionInMemoryRepo.java" />
+        <option value="$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java" />
       </list>
     </option>
   </component>
@@ -294,13 +344,15 @@
     <option name="x" value="3" />
     <option name="y" value="23" />
     <option name="width" value="1271" />
-    <option name="height" value="704" />
+    <option name="height" value="701" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,12 +365,240 @@
               <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="meetup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="payment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="reservation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="reservation" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="ticket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="domain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="persistence" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservix" type="462c0819:PsiDirectoryNode" />
+              <item name="projection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="groovy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="booking-service" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="infrastructure" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="groovy" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: io.vavr:vavr:0.10.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: io.vavr:vavr:0.10.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="vavr-0.10.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: io.vavr:vavr:0.10.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="vavr-0.10.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="vavr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="booking-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: io.vavr:vavr:0.10.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="vavr-0.10.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="vavr" type="462c0819:PsiDirectoryNode" />
+              <item name="collection" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -331,7 +611,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Spock" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Spock" value="spock.lang.Specification" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/src/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/domain/src/main/java/reservix/reservation" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -339,32 +619,36 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="reservix.meetup" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="reservix.command" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="spock.lang.Specification" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="reservix" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/domain/src/main/java/reservix/reservation" />
+      <recent name="$PROJECT_DIR$/application/src/test" />
+      <recent name="$PROJECT_DIR$/application/src/main/java/application" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="reservix.reservation" />
+      <recent name="reservix.application" />
+      <recent name="reservix.meetup" />
+      <recent name="reservix.command" />
+      <recent name="reservix.persistence" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/application/src/test/groovy" />
       <recent name="$PROJECT_DIR$/infrastructure/src/test/groovy" />
       <recent name="$PROJECT_DIR$/infrastructure/src" />
       <recent name="$PROJECT_DIR$/infrastructure/src/main/test" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-      <recent name="reservix" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="reservix.command" />
-      <recent name="reservix.persistence" />
-      <recent name="reservix.meetup.events" />
-      <recent name="reservix.meetup" />
-      <recent name="reservix.projection" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/application/src/test" />
-      <recent name="$PROJECT_DIR$/application/src/main/java/application" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -379,7 +663,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.booking-service [run]">
+  <component name="RunManager" selected="JUnit.MeetupCommandControllerTest">
     <configuration name="booking-service [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -399,7 +683,7 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MeetupCommandControllerTest.should create new meetup and initialize all places" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MeetupCommandControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="booking-service.infrastructure.test" />
       <extension name="coverage">
         <pattern>
@@ -409,8 +693,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="reservix.command" />
       <option name="MAIN_CLASS_NAME" value="reservix.command.MeetupCommandControllerTest" />
-      <option name="METHOD_NAME" value="should create new meetup and initialize all places" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -464,18 +747,18 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.booking-service [run]" />
-      <item itemvalue="JUnit.MeetupCommandControllerTest.should create new meetup and initialize all places" />
       <item itemvalue="JUnit.MeetupCommandControllerTest.should select few places for some meetup and accept reservation" />
       <item itemvalue="JUnit.RandomPlacesSelectorTest" />
       <item itemvalue="JUnit.RandomPlacesSelectorTest.Name" />
+      <item itemvalue="JUnit.MeetupCommandControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MeetupCommandControllerTest" />
         <item itemvalue="Gradle.booking-service [run]" />
         <item itemvalue="JUnit.MeetupCommandControllerTest.should select few places for some meetup and accept reservation" />
         <item itemvalue="JUnit.RandomPlacesSelectorTest.Name" />
         <item itemvalue="JUnit.RandomPlacesSelectorTest" />
-        <item itemvalue="JUnit.MeetupCommandControllerTest.should create new meetup and initialize all places" />
       </list>
     </recent_temporary>
   </component>
@@ -532,13 +815,31 @@
       <option name="project" value="LOCAL" />
       <updated>1578759233393</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add gitignore">
+      <created>1578759454002</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578759454002</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add gitignore">
+      <created>1578759516583</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578759516583</updated>
+    </task>
+    <task id="LOCAL-00009" summary="some changes :-)">
+      <created>1580851285698</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1580851285698</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MeetupCommandControllerTest_should_create_new_meetup_and_initialize_all_places - 2020.01.06 at 11h 13m 47s.xml">
-      <configuration name="MeetupCommandControllerTest.should create new meetup and initialize all places" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RandomPlacesSelectorTest - 2020.01.08 at 22h 24m 15s.xml">
       <configuration name="RandomPlacesSelectorTest" configurationId="JUnit" />
     </history-entry>
@@ -566,11 +867,15 @@
     <history-entry file="MeetupCommandControllerTest_should_select_few_places_for_some_meetup_and_accept_reservation - 2020.01.11 at 11h 30m 12s.xml">
       <configuration name="MeetupCommandControllerTest.should select few places for some meetup and accept reservation" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MeetupCommandControllerTest - 2020.02.04 at 22h 22m 51s.xml">
+      <configuration name="MeetupCommandControllerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="1271" height="704" extended-state="6" />
+    <frame x="3" y="23" width="1271" height="701" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31163546" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09601302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -578,13 +883,13 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.19211823" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40065682" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.37602627" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.10180624" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37766832" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.24958949" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.20915033" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32843137" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.47058824" />
@@ -638,7 +943,8 @@
     <MESSAGE value="fix some bugs" />
     <MESSAGE value="fix tests" />
     <MESSAGE value="add gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gitignore" />
+    <MESSAGE value="some changes :-)" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes :-)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -662,24 +968,6 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupService.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionEventListener.java</url>
-          <line>58</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Meetup.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupCommandControllerTest.groovy</url>
           <line>43</line>
           <properties />
@@ -690,18 +978,6 @@
           <line>13</line>
           <properties />
           <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -743,247 +1019,150 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupCreatedEvent.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationRejected.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="31" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/AggregateRoot.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationCreated.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionEventListener.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        <state relative-caret-position="120">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/AcceptReservationCommand.java" />
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/UnselectReservationPlacesCommand.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib/src.zip!/java.base/java/util/stream/Stream.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationAccessForbiddenException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1125">
-          <caret line="676" column="13" selection-start-line="676" selection-start-column="13" selection-end-line="676" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy/2.5.6/659f15f6386270acdfd3afa7a2a5caea24a3d8ad/groovy-2.5.6-sources.jar!/org/codehaus/groovy/runtime/DefaultGroovyMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="10729" column="36" selection-start-line="10729" selection-start-column="36" selection-end-line="10729" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="2949" column="25" selection-start-line="2949" selection-start-column="25" selection-end-line="2949" selection-end-column="25" />
-          <folding>
-            <element signature="e#118039#118040#0" expanded="true" />
-            <element signature="e#118101#118102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/CreateNewMeetupCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceCreatedEvent.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="36" />
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceUnselectedEvent.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-collections4/4.0/f8262a0e305c01bb4e8cb4053374315a8bc08e21/commons-collections4-4.0-sources.jar!/org/apache/commons/collections4/MultiMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="96" column="11" selection-start-line="96" selection-start-column="11" selection-end-line="96" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-collections4/4.0/f8262a0e305c01bb4e8cb4053374315a8bc08e21/commons-collections4-4.0-sources.jar!/org/apache/commons/collections4/map/MultiValueMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="86" column="45" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/MeetupId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/PlaceId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#164#165#0" expanded="true" />
-            <element signature="e#219#220#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceReservedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/ChangeReservationPlacesCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-http-server-netty/1.2.8/ec00053be0fd56fa4c9c89fb9dcdf08d6296dd0/micronaut-http-server-netty-1.2.8-sources.jar!/io/micronaut/http/server/netty/RoutingInBoundHandler.java">
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/DefaultEventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="1401" selection-start-line="1401" selection-end-line="1401" />
+        <state relative-caret-position="75">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Reservation.java">
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/MeetupPlacesInMemoryRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Reservations.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/user/LoggedUserSupplier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/user/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/user/UserDetailsDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/user/UserDetailsProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/user/UserId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumberPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/PlaceAvailabilityValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/ticket/TicketIssuedEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/payment/Invoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/InvoiceIssuer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/MeetupInMemoryRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/EventEmitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/SimpleEventsEmitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="2290" column="17" selection-start-line="2290" selection-end-line="2293" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib/src.zip!/java.base/java/io/PrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="895" column="16" selection-start-line="895" selection-start-column="16" selection-end-line="895" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Random.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="385" column="15" selection-start-line="385" selection-start-column="15" selection-end-line="385" selection-end-column="15" />
-          <folding>
-            <element signature="e#11995#11996#0" expanded="true" />
-            <element signature="e#12026#12027#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spockframework/spock-core/1.2-groovy-2.5/61fafd5ed7e61dad39272618e84c8ae5004ffa7a/spock-core-1.2-groovy-2.5-sources.jar!/org/spockframework/runtime/ValueRecorder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/TicketIssuer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/NotificationSenderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/configuration/ApplicationConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="32" />
+        <state relative-caret-position="354">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -992,60 +1171,126 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-188">
-          <caret line="17" column="55" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="55" />
+        <state relative-caret-position="338">
+          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-inject/1.2.8/fe69bc285c71b242fd2ba6cd33663516462be59f/micronaut-inject-1.2.8-sources.jar!/io/micronaut/context/AbstractBeanDefinition.java">
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/NotificationSenderService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="1017" column="13" selection-start-line="1017" selection-start-column="13" selection-end-line="1017" selection-end-column="13" />
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/build.gradle">
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/ReservationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="39">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/RandomPlacesSelectorTest.groovy" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spockframework/spock-core/1.2-groovy-2.5/61fafd5ed7e61dad39272618e84c8ae5004ffa7a/spock-core-1.2-groovy-2.5-sources.jar!/org/spockframework/runtime/GroovyRuntimeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="170" selection-start-line="170" selection-end-line="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/command/MeetupCommandController.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/ticket/NotificationSender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="25" />
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/events/ReservationAcceptedEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupPlacesManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/RandomPlacesSelector.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/ticket/Ticket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="180">
+          <caret line="16" column="98" selection-start-line="16" selection-start-column="98" selection-end-line="16" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/TicketIssuer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/AggregateRoot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vavr/vavr/0.10.0/449a67da679841ddd8340f477e1501445999a562/vavr-0.10.0-sources.jar!/io/vavr/collection/Seq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="109" column="8" lean-forward="true" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/EventEmitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupProjectionController.java">
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/MeetupInMemoryRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="23" column="64" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="64" />
+        <state relative-caret-position="330">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/TicketInMemoryRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupCreatedEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1054,109 +1299,139 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/Meetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="40" column="50" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="50" />
+        <state relative-caret-position="266">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#MeetupName#0;class#Meetup#0" />
+            <element signature="class#MeetupTime#0;class#Meetup#0" />
+            <element signature="class#AvailablePlaces#0;class#Meetup#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/reservation/ReservationAccepted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupCommandControllerTest.groovy">
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionEventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#26#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/build/reports/tests/test/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        <state relative-caret-position="221">
+          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupPlacesProjectionDto.java">
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/events/SimpleEventsEmitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/events/MeetupPlaceSelectedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/application/MeetupPlacesPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupPlaceRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/persistence/MeetupPlacesInMemoryRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-145">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionEventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="111">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/src/test/groovy/reservix/command/MeetupRestClientV1.java">
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/MeetupId.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        <state relative-caret-position="60">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/domain/src/main/java/reservix/meetup/PlaceId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupPlacesProjectionDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home/lib/src.zip!/java.base/java/util/stream/Stream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        <state relative-caret-position="118">
+          <caret line="1107" column="16" selection-start-line="1107" selection-start-column="16" selection-end-line="1107" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vavr/vavr/0.10.0/449a67da679841ddd8340f477e1501445999a562/vavr-0.10.0-sources.jar!/io/vavr/collection/HashSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vavr/vavr/0.10.0/449a67da679841ddd8340f477e1501445999a562/vavr-0.10.0-sources.jar!/io/vavr/collection/Set.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupProjectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsProjectionInMemoryRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infrastructure/src/main/java/reservix/projection/MeetupsPlacesProjectionInMemoryRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

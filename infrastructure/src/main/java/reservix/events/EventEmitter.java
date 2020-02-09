@@ -1,11 +1,10 @@
 package reservix.events;
 
+import io.vavr.collection.Seq;
 import reservix.Event;
-
-import java.util.Collection;
 
 public interface EventEmitter {
 
-    void emit(Collection<Event> events);
+    void emit(Seq<Event> events);
 
 }

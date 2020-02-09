@@ -1,18 +1,19 @@
 package reservix.reservation;
 
 import lombok.Value;
+import reservix.meetup.PlaceId;
 
-public abstract class PlaceSelectionOutcome {
+public interface PlaceSelectionOutcome {
 
     @Value
-    public static class PlaceSelected extends PlaceSelectionOutcome {
+    class PlaceSelected {
 
         private final PlaceId placeId;
 
     }
 
     @Value
-    public static class PlaceOccupiedError extends PlaceSelectionOutcome {
+    class PlaceOccupiedError {
 
         private final PlaceId placeId;
 

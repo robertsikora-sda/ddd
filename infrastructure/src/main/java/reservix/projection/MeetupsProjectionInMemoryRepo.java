@@ -1,5 +1,8 @@
 package reservix.projection;
 
+import io.vavr.collection.Set;
+import io.vavr.collection.HashSet;
+
 import javax.inject.Singleton;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,8 +17,8 @@ class MeetupsProjectionInMemoryRepo {
         return projectionDto;
     }
 
-    List<MeetupsProjectionDto> findAll() {
-        return MEETUPS_PROJECTION;
+    Set<MeetupsProjectionDto> findAll() {
+        return HashSet.ofAll(MEETUPS_PROJECTION);
     }
 
 }

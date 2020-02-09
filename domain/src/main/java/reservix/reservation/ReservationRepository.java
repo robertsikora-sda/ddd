@@ -13,10 +13,10 @@ public interface ReservationRepository {
 
     default Reservation getWithAccessCheck(final ReservationId id) {
         final Reservation reservation = Option.of(get(id))
-                .getOrElseThrow(() -> new ReservationNotFoundException());
+                .getOrElseThrow(() -> new ReservationNotFoundException(id));
 
         if(!Objects.equals(reservation.getOwnerId(), LoggedUserSupplier.loggedUser())) {
-            throw new ReservationAccessForbiddenException();
+            throw new ReservationAccessForbiddenException(id);
         }
 
         return reservation;

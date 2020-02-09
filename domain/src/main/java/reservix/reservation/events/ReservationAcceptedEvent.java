@@ -1,19 +1,16 @@
 package reservix.reservation.events;
 
+import io.vavr.collection.Set;
 import lombok.Value;
 import reservix.Event;
-import reservix.reservation.PlaceId;
-import reservix.meetup.Meetup;
-
-import java.util.List;
+import reservix.meetup.MeetupId;
+import reservix.meetup.PlaceId;
 
 @Value
 public class ReservationAcceptedEvent implements Event {
 
-    private Meetup.Name name;
+    private MeetupId meetupId;
 
-    private Meetup.Time time;
-
-    private List<PlaceId> reservedPlaces;
+    private Set<PlaceId> reservedPlaces;
 
 }

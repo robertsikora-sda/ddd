@@ -1,12 +1,23 @@
 package reservix.application;
 
+import io.vavr.control.Either;
 import lombok.AllArgsConstructor;
 import reservix.meetup.MeetupId;
-import reservix.reservation.PlaceId;
-import reservix.reservation.*;
+import reservix.reservation.PlaceAvailabilityValidator;
+import reservix.meetup.PlaceId;
+import reservix.reservation.PlaceUnselected;
+import reservix.reservation.Reservation;
+import reservix.reservation.ReservationAccepted;
+import reservix.reservation.ReservationCreated;
+import reservix.reservation.ReservationId;
+import reservix.reservation.ReservationRejected;
+import reservix.reservation.ReservationRepository;
 import reservix.user.LoggedUserSupplier;
 
 import javax.inject.Singleton;
+
+import static reservix.reservation.PlaceSelectionOutcome.PlaceOccupiedError;
+import static reservix.reservation.PlaceSelectionOutcome.PlaceSelected;
 
 @Singleton
 @AllArgsConstructor
@@ -17,26 +28,23 @@ public class ReservationService {
 
     public ReservationCreated createNewReservation(final MeetupId meetupId) {
 
-        final Reservation reservation = reservationRepository.save(
+        final Reservation createdReservation = reservationRepository.save(
 
-                new Reservation(meetupId, LoggedUserSupplier.loggedUser())
+                Reservation.of(meetupId, LoggedUserSupplier.loggedUser())
 
         );
 
-        return new ReservationCreated(reservation.getId());
+        return new ReservationCreated(createdReservation.getId());
     }
 
-    public PlaceSelectionOutcome selectReservationPlace(final ReservationId reservationId, final PlaceId placeId) {
+    public Either<PlaceOccupiedError, PlaceSelected> selectReservationPlace(final ReservationId reservationId, final PlaceId placeId) {
         final Reservation reservation = reservationRepository.getWithAccessCheck(reservationId);
 
-        final PlaceSelectionOutcome outcome = reservation.selectPlace(placeId, placeChecker);
-
-        reservationRepository.save(reservation);
-
-        return outcome;
+        return reservation.selectPlace(placeId, placeChecker)
+                .peek(t -> reservationRepository.save(reservation));
     }
 
-    public PlaceUnselected unselectReservationMeetupPlace(final ReservationId reservationId, final PlaceId placeId) {
+    public PlaceUnselected unselectReservationPlace(final ReservationId reservationId, final PlaceId placeId) {
         final Reservation reservation = reservationRepository.getWithAccessCheck(reservationId);
 
         final PlaceUnselected placeUnselected = reservation.unselectPlace(placeId);

@@ -1,43 +1,58 @@
 package reservix.projection;
 
-import org.apache.commons.collections4.MultiMap;
-import org.apache.commons.collections4.map.MultiValueMap;
+import io.vavr.collection.Set;
+import io.vavr.collection.HashSet;
 import reservix.meetup.MeetupId;
-import reservix.reservation.PlaceId;
+import reservix.meetup.PlaceId;
 
 import javax.inject.Singleton;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 @Singleton
 class MeetupsPlacesProjectionInMemoryRepo {
 
-    private static final MultiMap<String, MeetupPlacesProjectionDto> MEETUPS_PLACES_PROJECTION = MultiValueMap.multiValueMap(new HashMap<>());
+    private static final List<MeetupPlacesProjectionDto> MEETUPS_PLACES_PROJECTION = new ArrayList<>();
 
     MeetupPlacesProjectionDto save(final MeetupPlacesProjectionDto projectionDto) {
-        return ((List<MeetupPlacesProjectionDto>)MEETUPS_PLACES_PROJECTION
-            .getOrDefault(projectionDto.getMeetupId(), Collections.emptyList()))
-            .stream().filter(t -> Objects.equals(t.getPlaceId(), projectionDto.getPlaceId()))
+        return MEETUPS_PLACES_PROJECTION.stream()
+                .filter(findMeetupPlace(projectionDto))
                 .findFirst()
-            .map(t -> {
-                        t.setStatus(projectionDto.getStatus());
-                        return t;
-                    }
-            ).orElseGet(() -> {
-                        MEETUPS_PLACES_PROJECTION.put(projectionDto.getMeetupId(), projectionDto);
-                        return projectionDto;
-            });
+                .map(updateExistingPlace(projectionDto))
+                .orElseGet(createNewPlace(projectionDto));
     }
 
-    MeetupPlacesProjectionDto get(final MeetupId meetupId, final PlaceId placeId) {
-        return ((List<MeetupPlacesProjectionDto>)MEETUPS_PLACES_PROJECTION.get(meetupId.toString())).stream().filter(
-                t -> Objects.equals(t.getPlaceId(), placeId.toString())).findFirst().orElseThrow(() -> new IllegalStateException("Cannot find place for given id")
-        );
+    private Predicate<MeetupPlacesProjectionDto> findMeetupPlace(MeetupPlacesProjectionDto projectionDto) {
+        return t -> Objects.equals(PlaceId.of(t.getMeetupId(), t.getPlaceNumber()),
+                PlaceId.of(projectionDto.getMeetupId(), projectionDto.getPlaceNumber()));
     }
 
-    List<MeetupPlacesProjectionDto> findAllPlaces(final String meetupId) {
-        return (List<MeetupPlacesProjectionDto>) MEETUPS_PLACES_PROJECTION.get(meetupId);
+    private Supplier<MeetupPlacesProjectionDto> createNewPlace(MeetupPlacesProjectionDto projectionDto) {
+        return () -> {
+                MEETUPS_PLACES_PROJECTION.add(projectionDto);
+                return projectionDto;
+            };
+    }
+
+    private Function<MeetupPlacesProjectionDto, MeetupPlacesProjectionDto> updateExistingPlace(MeetupPlacesProjectionDto projectionDto) {
+        return dto -> {
+                    dto.setStatus(projectionDto.getStatus());
+                    return dto;
+                };
+    }
+
+    MeetupPlacesProjectionDto get(final PlaceId placeId) {
+        return MEETUPS_PLACES_PROJECTION.stream().filter(t -> Objects.equals(placeId, PlaceId.of(t.getMeetupId(), t.getPlaceNumber()))).findFirst()
+                .orElse(new MeetupPlacesProjectionDto());
+    }
+
+    Set<MeetupPlacesProjectionDto> findAllPlaces(final MeetupId meetupId) {
+        return HashSet.ofAll(MEETUPS_PLACES_PROJECTION.stream()
+                .filter(t -> Objects.equals(String.valueOf(meetupId.getId()), t.getMeetupId())).collect(Collectors.toSet()));
     }
 }

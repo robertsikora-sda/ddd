@@ -3,6 +3,6 @@ package reservix.meetup;
 @FunctionalInterface
 public interface PlaceNumberPolicy {
 
-    PlaceNumber generate();
+    PlaceNumber generate(int place);
 
 }

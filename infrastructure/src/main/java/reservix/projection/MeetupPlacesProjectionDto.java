@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MeetupPlacesProjectionDto {
 
-    private String placeId;
     private String meetupId;
     private String placeNumber;
     private Status status;

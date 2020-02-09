@@ -1,8 +1,9 @@
 package reservix.application;
 
 import lombok.AllArgsConstructor;
+import reservix.meetup.Meetup;
+import reservix.meetup.MeetupRepository;
 import reservix.reservation.events.ReservationAcceptedEvent;
-import reservix.ticket.NotificationSender;
 import reservix.ticket.Ticket;
 import reservix.ticket.TicketRepo;
 
@@ -14,21 +15,19 @@ import java.util.stream.Collectors;
 public class TicketIssuer {
 
     private final TicketRepo ticketRepo;
-    private final NotificationSender notificationSender;
+    private final MeetupRepository meetupRepository;
 
-    public ReservationAcceptedEvent issueNewTicket(final ReservationAcceptedEvent event) {
-        ticketRepo.save(Ticket.builder()
+    public Ticket issueNewTicket(final ReservationAcceptedEvent event) {
+
+        final Meetup meetup = meetupRepository.get(event.getMeetupId());
+
+        return ticketRepo.save(Ticket.builder()
                 .ownerFullName("TO-DO")
-                .meetupName(event.getName().getValue())
-                .meetupTime(event.getTime().getValue())
-                .places(event.getReservedPlaces().stream()
-                        .map(t -> t.getId().toString()).collect(Collectors.toUnmodifiableList()))
+                .meetupName(meetup.getMeetupName().getValue())
+                .meetupTime(meetup.getMeetupTime().getValue())
+                .places(event.getReservedPlaces().map(t -> t.getPlaceNumber().getNumber()).collect(Collectors.toUnmodifiableList()))
                 .build()
 
         );
-
-        notificationSender.sendNotification("recipient@test.com", "Your ticket for is ready to download");
-
-        return event;
     }
 }

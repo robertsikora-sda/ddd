@@ -1,6 +1,7 @@
 package reservix.reservation;
 
 import lombok.Value;
+import reservix.meetup.PlaceId;
 
 public class PlaceAvailabilityValidator {
 

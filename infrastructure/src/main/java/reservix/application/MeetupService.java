@@ -8,8 +8,8 @@ import javax.inject.Singleton;
 import java.time.LocalDateTime;
 
 import static reservix.meetup.Meetup.AvailablePlaces;
-import static reservix.meetup.Meetup.Name;
-import static reservix.meetup.Meetup.Time;
+import static reservix.meetup.Meetup.MeetupName;
+import static reservix.meetup.Meetup.MeetupTime;
 
 @Singleton
 @AllArgsConstructor
@@ -24,15 +24,10 @@ public class MeetupService {
         final Meetup meetup = meetupRepository.save(
 
                new Meetup(LoggedUserSupplier.loggedUser(),
-                        new Name(name),
-                        new Time(time),
+                        new MeetupName(name),
+                        new MeetupTime(time),
                         new AvailablePlaces(availablePlaces),
-                        () -> {
-
-                            int number = 1;
-                            return new PlaceNumber(String.valueOf(number++));
-
-                        })
+                        place -> new PlaceNumber("Place" + place))
 
         );
 
