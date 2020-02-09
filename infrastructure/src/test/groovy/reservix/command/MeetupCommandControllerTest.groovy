@@ -2,7 +2,7 @@ package reservix.command
 
 import io.micronaut.context.ApplicationContext
 import io.micronaut.runtime.server.EmbeddedServer
-import reservix.projection.MeetupPlacesProjectionDto
+import reservix.projection.MeetupPlaceProjection
 import spock.lang.AutoCleanup
 import spock.lang.Shared
 import spock.lang.Specification
@@ -41,7 +41,7 @@ class MeetupCommandControllerTest extends Specification {
        then:
             def allPlaces = getAllPlaces(meetup.meetupId)
             allPlaces.size() == 12
-            allPlaces.stream().filter{t -> t.status == MeetupPlacesProjectionDto.Status.RESERVED}.count() == 3
+            allPlaces.stream().filter{t -> t.status == MeetupPlaceProjection.Status.RESERVED}.count() == 3
     }
 
     def createMeetup() {

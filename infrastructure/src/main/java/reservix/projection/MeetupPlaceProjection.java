@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MeetupPlacesProjectionDto {
+public class MeetupPlaceProjection {
 
     private String meetupId;
     private String placeNumber;

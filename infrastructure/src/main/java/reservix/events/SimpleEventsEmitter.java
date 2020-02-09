@@ -6,8 +6,8 @@ import reservix.Event;
 import reservix.application.MeetupPlacesManager;
 import reservix.meetup.events.*;
 import reservix.application.InvoiceIssuer;
-import reservix.projection.MeetupsPlacesProjectionEventListener;
-import reservix.projection.MeetupsProjectionEventListener;
+import reservix.projection.MeetupPlaceProjectionEventListener;
+import reservix.projection.MeetupProjectionEventListener;
 import reservix.reservation.events.PlaceSelectedEvent;
 import reservix.reservation.events.PlaceUnselectedEvent;
 import reservix.reservation.events.ReservationAcceptedEvent;
@@ -29,8 +29,8 @@ class SimpleEventsEmitter implements EventEmitter {
     private final Provider<InvoiceIssuer> invoiceIssuer;
     private final Provider<MeetupPlacesManager> meetupPlacesManager;
 
-    private final MeetupsProjectionEventListener meetupsProjectionEventListener;
-    private final MeetupsPlacesProjectionEventListener placesProjectionEventListener;
+    private final MeetupProjectionEventListener meetupProjectionEventListener;
+    private final MeetupPlaceProjectionEventListener placesProjectionEventListener;
 
     @Override
     public void emit(final Seq<Event> events) {
@@ -45,7 +45,7 @@ class SimpleEventsEmitter implements EventEmitter {
         events.forEach(event -> Match(event).of(
 
                         Case($(instanceOf(MeetupCreatedEvent.class)), e -> {
-                            meetupsProjectionEventListener.onMeetupCreatedEvent(e);
+                            meetupProjectionEventListener.onMeetupCreatedEvent(e);
                             return e;
                         }),
 

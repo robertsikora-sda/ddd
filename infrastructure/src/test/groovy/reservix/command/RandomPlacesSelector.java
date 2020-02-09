@@ -1,13 +1,13 @@
 package reservix.command;
 
-import reservix.projection.MeetupPlacesProjectionDto;
+import reservix.projection.MeetupPlaceProjection;
 
 import java.util.*;
 import java.util.function.Supplier;
 
 class RandomPlacesSelector {
 
-    static Supplier<Set<String>> randomSelector(List<MeetupPlacesProjectionDto> places, int desiredPlaces) {
+    static Supplier<Set<String>> randomSelector(List<MeetupPlaceProjection> places, int desiredPlaces) {
 
         return () -> {
 

@@ -11,17 +11,17 @@ import reservix.meetup.MeetupId;
 @AllArgsConstructor
 class MeetupProjectionController {
 
-    private final MeetupsProjectionInMemoryRepo meetupsProjectionInMemoryRepo;
-    private final MeetupsPlacesProjectionInMemoryRepo meetupsPlacesProjectionInMemoryRepo;
+    private final MeetupProjectionInMemoryRepo meetupProjectionInMemoryRepo;
+    private final MeetupPlaceProjectionInMemoryRepo meetupPlaceProjectionInMemoryRepo;
 
     @Get("/meetups")
-    Set<MeetupProjectionDto> getAllMeetups() {
-        return meetupsProjectionInMemoryRepo.findAll();
+    Set<MeetupProjection> getAllMeetups() {
+        return meetupProjectionInMemoryRepo.findAll();
     }
 
     @Get("/meetups/{meetupId}/places")
-    Set<MeetupPlacesProjectionDto> getMeetupPlaces(@PathVariable final String meetupId) {
-        return meetupsPlacesProjectionInMemoryRepo.findAllPlaces(MeetupId.of(meetupId));
+    Set<MeetupPlaceProjection> getMeetupPlaces(@PathVariable final String meetupId) {
+        return meetupPlaceProjectionInMemoryRepo.findAllPlaces(MeetupId.of(meetupId));
     }
 
 }

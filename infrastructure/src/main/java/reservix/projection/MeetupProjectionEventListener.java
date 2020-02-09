@@ -7,15 +7,15 @@ import javax.inject.Singleton;
 
 @Singleton
 @AllArgsConstructor
-public class MeetupsProjectionEventListener {
+public class MeetupProjectionEventListener {
 
-    private final MeetupsProjectionInMemoryRepo projectionRepo;
+    private final MeetupProjectionInMemoryRepo projectionRepo;
 
-    public MeetupProjectionDto onMeetupCreatedEvent(final MeetupCreatedEvent event) {
+    public MeetupProjection onMeetupCreatedEvent(final MeetupCreatedEvent event) {
 
         return projectionRepo.save(
 
-                new MeetupProjectionDto(
+                new MeetupProjection(
                         String.valueOf(event.getMeetupId().getId()),
                         String.valueOf(event.getOwner().getId()),
                         event.getMeetupName(),

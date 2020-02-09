@@ -1,8 +1,8 @@
 package reservix.application;
 
 import lombok.AllArgsConstructor;
-import reservix.projection.MeetupProjectionDto;
-import reservix.projection.MeetupsProjectionRepo;
+import reservix.projection.MeetupProjection;
+import reservix.projection.MeetupProjectionRepo;
 import reservix.reservation.events.ReservationAcceptedEvent;
 import reservix.ticket.Ticket;
 import reservix.ticket.TicketRepo;
@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
 public class TicketIssuer {
 
     private final TicketRepo ticketRepo;
-    private final MeetupsProjectionRepo meetupsProjectionRepo;
+    private final MeetupProjectionRepo meetupProjectionRepo;
 
     public Ticket issueNewTicket(final ReservationAcceptedEvent event) {
 
-        final MeetupProjectionDto meetup = meetupsProjectionRepo.findById(event.getMeetupId());
+        final MeetupProjection meetup = meetupProjectionRepo.findById(event.getMeetupId());
 
         return ticketRepo.save(Ticket.builder()
                 .ownerFullName(meetup.getOwnerId())

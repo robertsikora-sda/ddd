@@ -15,12 +15,12 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @Singleton
-class MeetupsPlacesProjectionInMemoryRepo implements MeetupsPlacesProjectionRepo {
+class MeetupPlaceProjectionInMemoryRepo implements MeetupsPlacesProjectionRepo {
 
-    private static final List<MeetupPlacesProjectionDto> MEETUPS_PLACES_PROJECTION = new ArrayList<>();
+    private static final List<MeetupPlaceProjection> MEETUPS_PLACES_PROJECTION = new ArrayList<>();
 
     @Override
-    public MeetupPlacesProjectionDto save(final MeetupPlacesProjectionDto projectionDto) {
+    public MeetupPlaceProjection save(final MeetupPlaceProjection projectionDto) {
         return MEETUPS_PLACES_PROJECTION.stream()
                 .filter(findMeetupPlace(projectionDto))
                 .findFirst()
@@ -28,19 +28,19 @@ class MeetupsPlacesProjectionInMemoryRepo implements MeetupsPlacesProjectionRepo
                 .orElseGet(createNewPlace(projectionDto));
     }
 
-    private Predicate<MeetupPlacesProjectionDto> findMeetupPlace(MeetupPlacesProjectionDto projectionDto) {
+    private Predicate<MeetupPlaceProjection> findMeetupPlace(MeetupPlaceProjection projectionDto) {
         return t -> Objects.equals(PlaceId.of(t.getMeetupId(), t.getPlaceNumber()),
                 PlaceId.of(projectionDto.getMeetupId(), projectionDto.getPlaceNumber()));
     }
 
-    private Supplier<MeetupPlacesProjectionDto> createNewPlace(MeetupPlacesProjectionDto projectionDto) {
+    private Supplier<MeetupPlaceProjection> createNewPlace(MeetupPlaceProjection projectionDto) {
         return () -> {
                 MEETUPS_PLACES_PROJECTION.add(projectionDto);
                 return projectionDto;
             };
     }
 
-    private Function<MeetupPlacesProjectionDto, MeetupPlacesProjectionDto> updateExistingPlace(MeetupPlacesProjectionDto projectionDto) {
+    private Function<MeetupPlaceProjection, MeetupPlaceProjection> updateExistingPlace(MeetupPlaceProjection projectionDto) {
         return dto -> {
                     dto.setStatus(projectionDto.getStatus());
                     return dto;
@@ -48,13 +48,13 @@ class MeetupsPlacesProjectionInMemoryRepo implements MeetupsPlacesProjectionRepo
     }
 
     @Override
-    public MeetupPlacesProjectionDto findById(final PlaceId placeId) {
+    public MeetupPlaceProjection findById(final PlaceId placeId) {
         return MEETUPS_PLACES_PROJECTION.stream().filter(t -> Objects.equals(placeId, PlaceId.of(t.getMeetupId(), t.getPlaceNumber()))).findFirst()
-                .orElse(new MeetupPlacesProjectionDto());
+                .orElse(new MeetupPlaceProjection());
     }
 
     @Override
-    public Set<MeetupPlacesProjectionDto> findAllPlaces(final MeetupId meetupId) {
+    public Set<MeetupPlaceProjection> findAllPlaces(final MeetupId meetupId) {
         return HashSet.ofAll(MEETUPS_PLACES_PROJECTION.stream()
                 .filter(t -> Objects.equals(String.valueOf(meetupId.getId()), t.getMeetupId())).collect(Collectors.toSet()));
     }
