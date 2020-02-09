@@ -52,7 +52,7 @@ class MeetupCommandController {
     @Post("/reservations/{reservationId}/selectPlace")
     HttpResponse selectReservationPlace(@PathVariable final String reservationId, @Body @Valid final ChangeReservationPlacesCommand command) {
 
-        return Match(reservationService.selectReservationPlace(ReservationId.of(reservationId), PlaceId.of(command.getPlaceId()))).of(
+        return Match(reservationService.selectReservationPlace(ReservationId.of(reservationId), PlaceId.of(command.getMeetupId(), command.getPlaceNumber()))).of(
 
                 Case($Right($()), HttpResponse.ok()),
 
@@ -63,7 +63,7 @@ class MeetupCommandController {
     @Post("/reservations/{reservationId}/unselectPlace")
     void unselectReservationPlaces(@PathVariable final String reservationId, @Body @Valid final ChangeReservationPlacesCommand command) {
 
-        reservationService.unselectReservationPlace(ReservationId.of(reservationId), PlaceId.of(command.getPlaceId()));
+        reservationService.unselectReservationPlace(ReservationId.of(reservationId), PlaceId.of(command.getMeetupId(), command.getPlaceNumber()));
 
     }
 

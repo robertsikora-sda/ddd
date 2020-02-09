@@ -50,14 +50,14 @@ public class Reservation extends AggregateRoot {
 
     @Getter private ReservationId id;
     @Getter private UserId ownerId;
-    private MeetupId meetupId;
-    private ReservationState state;
-    private LocalDateTime startDate;
+    private final MeetupId meetupId;
+    private final ReservationState state;
+    private final LocalDateTime startDate;
     private LocalDateTime finishDate;
 
-    private final java.util.Set<PlaceId> places = Collections.emptySet();
+    private final java.util.Set<PlaceId> places = new java.util.HashSet<>();
 
-    Set getPlaces() {
+    private Set getPlaces() {
         return HashSet.ofAll(places);
     }
 

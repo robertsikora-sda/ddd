@@ -15,7 +15,7 @@ class MeetupProjectionController {
     private final MeetupsPlacesProjectionInMemoryRepo meetupsPlacesProjectionInMemoryRepo;
 
     @Get("/meetups")
-    Set<MeetupsProjectionDto> getAllMeetups() {
+    Set<MeetupProjectionDto> getAllMeetups() {
         return meetupsProjectionInMemoryRepo.findAll();
     }
 

@@ -36,7 +36,7 @@ public class MeetupsPlacesProjectionEventListener {
 
     public PlaceSelectedEvent onSelectPlace(final PlaceSelectedEvent event) {
 
-        final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(event.getPlaceId());
+        final MeetupPlacesProjectionDto meetupPlace = projectionRepo.findById(event.getPlaceId());
         meetupPlace.setStatus(SELECTED);
 
         projectionRepo.save(meetupPlace);
@@ -46,7 +46,7 @@ public class MeetupsPlacesProjectionEventListener {
 
     public PlaceUnselectedEvent onUnselectPlace(final PlaceUnselectedEvent event) {
 
-        final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(event.getPlaceId());
+        final MeetupPlacesProjectionDto meetupPlace = projectionRepo.findById(event.getPlaceId());
         meetupPlace.setStatus(FREE);
 
         projectionRepo.save(meetupPlace);
@@ -58,7 +58,7 @@ public class MeetupsPlacesProjectionEventListener {
 
         return event.getReservedPlaces().map(placeId -> {
 
-                final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(placeId);
+                final MeetupPlacesProjectionDto meetupPlace = projectionRepo.findById(placeId);
                 meetupPlace.setStatus(RESERVED);
                 return projectionRepo.save(meetupPlace);
             }
@@ -69,7 +69,7 @@ public class MeetupsPlacesProjectionEventListener {
 
         return event.getReservedPlaces().map(placeId -> {
 
-                    final MeetupPlacesProjectionDto meetupPlace = projectionRepo.get(placeId);
+                    final MeetupPlacesProjectionDto meetupPlace = projectionRepo.findById(placeId);
                     meetupPlace.setStatus(FREE);
                     return projectionRepo.save(meetupPlace);
                 }

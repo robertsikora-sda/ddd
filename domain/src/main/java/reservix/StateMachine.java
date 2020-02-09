@@ -13,11 +13,13 @@ public class StateMachine<T extends Enum<T>> {
         this.ALLOWED_TRANSITIONS = ALLOWED_TRANSITIONS;
     }
 
-    public void changeState(Enum<T> currentState, final Set<Enum<T>> allowedStates, final Enum<T> targetState) {
+    public Enum<T> changeState(Enum<T> currentState, final Set<Enum<T>> allowedStates, final Enum<T> targetState) {
         checkCurrentState(currentState, allowedStates);
         checkTargetState(currentState, targetState);
 
         currentState = targetState;
+
+        return currentState;
     }
 
     private void checkCurrentState(Enum<T> currentState, final Set<Enum<T>> allowedStatuses) {

@@ -10,6 +10,8 @@ import javax.validation.constraints.NotEmpty;
 public class ChangeReservationPlacesCommand {
 
     @NotEmpty
-    private String placeId;
+    private String meetupId;
+    @NotEmpty
+    private String placeNumber;
 
 }

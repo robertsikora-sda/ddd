@@ -17,4 +17,8 @@ public final class ReservationId {
     public static ReservationId of(final String id) {
         return new ReservationId(UUID.fromString(id));
     }
+
+    public String toString() {
+        return String.valueOf(id);
+    }
 }

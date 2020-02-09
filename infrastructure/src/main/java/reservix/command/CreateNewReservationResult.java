@@ -8,7 +8,7 @@ public class CreateNewReservationResult {
 
     private String reservationId;
 
-    public CreateNewReservationResult(ReservationId reservationId) {
-        this.reservationId = String.valueOf(reservationId.getId());
+    public CreateNewReservationResult(final ReservationId reservationId) {
+        this.reservationId = String.valueOf(reservationId.toString());
     }
 }

@@ -1,5 +1,6 @@
 package reservix.reservation;
 
+import lombok.EqualsAndHashCode;
 import lombok.Value;
 import reservix.meetup.PlaceId;
 
@@ -14,6 +15,7 @@ public class PlaceAvailabilityValidator {
 abstract class PlaceOccupancy {
 }
 
+@EqualsAndHashCode(callSuper = true)
 @Value
 class PlaceFree extends PlaceOccupancy {
 
@@ -21,6 +23,7 @@ class PlaceFree extends PlaceOccupancy {
 
 }
 
+@EqualsAndHashCode(callSuper = true)
 @Value
 class PlaceOccupied extends PlaceOccupancy {
 

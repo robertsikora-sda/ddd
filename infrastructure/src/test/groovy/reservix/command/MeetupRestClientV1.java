@@ -5,7 +5,7 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.http.client.annotation.Client;
 import reservix.projection.MeetupPlacesProjectionDto;
-import reservix.projection.MeetupsProjectionDto;
+import reservix.projection.MeetupProjectionDto;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ interface MeetupRestClientV1 {
     void acceptReservation(String meetupId);
 
     @Get("/queries/meetups")
-    List<MeetupsProjectionDto> getAllMeetups();
+    List<MeetupProjectionDto> getAllMeetups();
 
     @Get("/queries/meetups/{meetupId}/places")
     List<MeetupPlacesProjectionDto> getAllMeetupsPlaces(String meetupId);

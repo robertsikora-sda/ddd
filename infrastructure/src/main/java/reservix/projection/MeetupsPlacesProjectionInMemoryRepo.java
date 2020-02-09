@@ -15,11 +15,12 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @Singleton
-class MeetupsPlacesProjectionInMemoryRepo {
+class MeetupsPlacesProjectionInMemoryRepo implements MeetupsPlacesProjectionRepo {
 
     private static final List<MeetupPlacesProjectionDto> MEETUPS_PLACES_PROJECTION = new ArrayList<>();
 
-    MeetupPlacesProjectionDto save(final MeetupPlacesProjectionDto projectionDto) {
+    @Override
+    public MeetupPlacesProjectionDto save(final MeetupPlacesProjectionDto projectionDto) {
         return MEETUPS_PLACES_PROJECTION.stream()
                 .filter(findMeetupPlace(projectionDto))
                 .findFirst()
@@ -46,12 +47,14 @@ class MeetupsPlacesProjectionInMemoryRepo {
                 };
     }
 
-    MeetupPlacesProjectionDto get(final PlaceId placeId) {
+    @Override
+    public MeetupPlacesProjectionDto findById(final PlaceId placeId) {
         return MEETUPS_PLACES_PROJECTION.stream().filter(t -> Objects.equals(placeId, PlaceId.of(t.getMeetupId(), t.getPlaceNumber()))).findFirst()
                 .orElse(new MeetupPlacesProjectionDto());
     }
 
-    Set<MeetupPlacesProjectionDto> findAllPlaces(final MeetupId meetupId) {
+    @Override
+    public Set<MeetupPlacesProjectionDto> findAllPlaces(final MeetupId meetupId) {
         return HashSet.ofAll(MEETUPS_PLACES_PROJECTION.stream()
                 .filter(t -> Objects.equals(String.valueOf(meetupId.getId()), t.getMeetupId())).collect(Collectors.toSet()));
     }

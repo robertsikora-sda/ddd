@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MeetupsProjectionDto {
+public class MeetupProjectionDto {
 
     private String meetupId;
     private String ownerId;

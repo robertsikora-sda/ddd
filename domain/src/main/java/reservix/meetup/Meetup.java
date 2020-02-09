@@ -66,7 +66,7 @@ public class Meetup extends AggregateRoot {
         return places.stream().filter(place -> Objects.equals(placeId, place.getId())).findFirst().orElseThrow(
                 () -> new IllegalStateException("Cannot find place !")
         );
-    };
+    }
 
     @Value
     public static class MeetupName {
